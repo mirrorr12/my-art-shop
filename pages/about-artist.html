@@ -3,61 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>α ART GALLERY | 藝術家與繪畫工藝介紹</title>
+  <title>α ART GALLERY | 藝術家 曾雅蘭 介紹</title>
+  
+  <!-- 社群 Icon 圖示庫 (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; }
-    body { background-color: #fafafa; color: #222; line-height: 1.8; }
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; 
+    }
+    body { 
+      background-color: #fafafa; 
+      color: #222; 
+      line-height: 1.8; 
+    }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
-    .logo { font-size: 22px; font-weight: 600; letter-spacing: 2px; color: #1a1a1a; text-decoration: none; }
-    nav a { margin: 0 12px; text-decoration: none; color: #555; font-size: 14px; }
+    /* 頂部導覽列 */
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 20px 8%; 
+      background: #fff; 
+      border-bottom: 1px solid #eee; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
 
-    .artist-container { max-width: 850px; margin: 60px auto; padding: 0 20px; }
+    .logo { 
+      font-size: 22px; 
+      font-weight: 600; 
+      letter-spacing: 2px; 
+      color: #1a1a1a; 
+      text-decoration: none; 
+    }
+
+    nav a { 
+      margin: 0 12px; 
+      text-decoration: none; 
+      color: #555; 
+      font-size: 14px; 
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #000;
+      font-weight: 600;
+    }
+
+    /* 主內容區塊 */
+    .artist-container { 
+      max-width: 850px; 
+      margin: 60px auto; 
+      padding: 0 20px; 
+    }
     
-    .artist-profile { text-align: center; margin-bottom: 50px; }
-    .artist-profile h1 { font-size: 32px; font-weight: 400; letter-spacing: 3px; margin-bottom: 10px; }
-    .artist-profile p { color: #777; font-size: 15px; letter-spacing: 1px; }
+    .artist-profile { 
+      text-align: center; 
+      margin-bottom: 50px; 
+    }
 
-    .artist-content { background: #fff; padding: 40px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 30px; }
-    .artist-content h2 { font-size: 20px; font-weight: 500; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; letter-spacing: 1px; }
-    .artist-content p { color: #444; font-size: 15px; margin-bottom: 20px; }
+    .artist-profile h1 { 
+      font-size: 32px; 
+      font-weight: 400; 
+      letter-spacing: 4px; 
+      margin-bottom: 10px; 
+    }
 
-    footer { background: #fff; border-top: 1px solid #eee; padding: 40px 8%; text-align: center; font-size: 13px; color: #888; margin-top: 80px; }
+    .artist-profile p { 
+      color: #777; 
+      font-size: 15px; 
+      letter-spacing: 1px; 
+    }
+
+    .artist-content { 
+      background: #fff; 
+      padding: 40px; 
+      border: 1px solid #eee; 
+      border-radius: 8px; 
+      margin-bottom: 30px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .artist-content h2 { 
+      font-size: 20px; 
+      font-weight: 500; 
+      margin-bottom: 15px; 
+      padding-bottom: 10px; 
+      border-bottom: 1px solid #eee; 
+      letter-spacing: 1px; 
+      color: #1a1a1a;
+    }
+
+    .artist-content p { 
+      color: #444; 
+      font-size: 15px; 
+      margin-bottom: 20px; 
+    }
+
+    /* 頁尾 Footer 樣式 */
+    footer {
+      background-color: #181818;
+      color: #ccc;
+      padding: 60px 20px 40px;
+      border-top: 1px solid #282828;
+      margin-top: 80px;
+    }
+
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #aaa;
+      font-size: 22px;
+      transition: color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: #888;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+    .footer-info {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- 頂部導覽列 -->
   <header>
     <a href="../index.html" class="logo">α ART GALLERY</a>
     <nav>
       <a href="../index.html">首頁</a>
-      <a href="shop-prints.html">藝術商店</a>
+      <a href="shop-prints.html">典藏商店</a>
       <a href="gallery-artworks.html">原作賞析</a>
-      <a href="about-artist.html" style="font-weight: 600; color: #000;">畫家介紹</a>
+      <a href="about-artist.html" class="active">畫家介紹</a>
     </nav>
   </header>
 
   <main class="artist-container">
     <div class="artist-profile">
-      <h1>畫家與創作理念</h1>
+      <h1>唐卡畫師 ‧ 曾雅蘭</h1>
       <p>傳承藏密繪畫筆意 ‧ 靜心筆觸與宗教藝術之美</p>
     </div>
 
     <div class="artist-content">
-      <h2>關於畫師 (Artist Profile)</h2>
-      <p>修習唐卡繪畫多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與平靜融入筆觸之中。</p>
+      <h2>關於曾雅蘭 (Artist Profile)</h2>
+      <p>唐卡畫師曾雅蘭，專注於藏傳佛教唐卡繪畫藝術。修習唐卡藝術多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與靜心能量融入筆觸之中。</p>
     </div>
 
     <div class="artist-content">
-      <h2>繪製工藝與流程 (Craftsmanship)</h2>
-      <p><strong>1. 天然礦物顏料：</strong> 使用金箔、綠松石、孔雀石、朱砂等天然礦物研磨入畫，使色彩經百年歲月依然絢麗如初。</p>
-      <p><strong>2. 嚴謹度量衡：</strong> 嚴格遵循《造像量度經》規範，從菩薩尊容、手印至法器比例皆經過精密計算，呈現圓滿莊嚴之法相。</p>
-      <p><strong>3. 博物館級複製技術：</strong> 為了讓更多喜愛唐卡藝術的藏家能以平實價格典藏，我們採用高精度典藏微噴技術，忠實還原原作筆觸與金箔質感。</p>
+      <h2>繪製工藝與創作理念 (Craftsmanship)</h2>
+      <p><strong>1. 天然礦物顏料：</strong> 使用金箔、綠松石、孔雀石、朱砂等天然礦物顏料入畫，色彩經久不退，呈現莊嚴之金屬光澤與色彩層次。</p>
+      <p><strong>2. 嚴謹度量衡規範：</strong> 嚴格遵循傳統唐卡度量衡規範，從菩薩尊容、手印至法器比例皆經過精確計算，展現圓滿莊嚴之慈悲法相。</p>
+      <p><strong>3. 典藏級微噴藝術：</strong> 為了讓更多喜愛唐卡藝術的藏家能典藏作品，我們採用博物館級高精細微噴技術，忠實呈現原作線條與豐富細節。</p>
     </div>
   </main>
 
+  <!-- 頁尾 Footer (包含 FB 與 IG 社群連結) -->
   <footer>
-    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+    <div class="footer-container">
+      
+      <!-- 社群連結 Icon 列 -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+
+      <!-- 頁尾選單 -->
+      <nav class="footer-nav">
+        <a href="../index.html">首頁</a>
+        <a href="shop-prints.html">典藏商店</a>
+        <a href="gallery-artworks.html">原作賞析</a>
+        <a href="about-artist.html">畫家介紹</a>
+      </nav>
+
+      <!-- 版權文字 -->
+      <div class="footer-info">
+        <p>Taiwan ‧ Kaohsiung</p>
+        <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+      </div>
+
+    </div>
   </footer>
 
 </body>
