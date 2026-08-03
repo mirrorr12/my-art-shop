@@ -50,7 +50,7 @@
       gap: 50px;
     }
 
-    /* 左側圖庫展示（含多圖切換） */
+    /* 左側圖庫展示 */
     .gallery-container {
       display: flex;
       flex-direction: column;
@@ -149,7 +149,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 25px;
+      margin-bottom: 15px;
     }
 
     .frame-btn {
@@ -248,7 +248,7 @@
 
   <main class="product-container">
     
-    <!-- 左側圖片區（含點擊縮圖切換功能） -->
+    <!-- 左側圖片區 -->
     <div class="gallery-container">
       <div class="main-image-box">
         <img id="mainImage" src="FourArmedGuanyin.jpg" alt="主圖">
@@ -259,28 +259,26 @@
       </div>
     </div>
 
-    <!-- 右側選購控制區 -->
+    <!-- 右側資訊區 -->
     <div class="product-info">
       <h1 class="product-title">四臂觀音唐卡(高精細微噴)</h1>
       
       <div class="price-bar">
-        <span class="original-price">NT$5,165</span>
+        <span class="original-price">NT$12,000</span>
         <span class="current-price" id="totalPriceDisplay">NT$ 8,800 TWD</span>
         <span class="sale-tag">特價優惠中</span>
       </div>
 
-<!-- 規格選單 -->
-<div class="option-title">規格：<strong id="selectedFrameName" style="color:#000;">畫芯</strong></div>
-<div class="frame-options" style="grid-template-columns: repeat(2, 1fr);">
-  <!-- 點擊時帶入：(按鈕本身, 規格名稱, 價格, 簡介說明文字) -->
-  <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 3800, '【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。')">畫芯</button>
-  <button class="frame-btn" onclick="onFrameSelect(this, '傳統藏式裝裱', 8800, '【傳統藏式裝裱】採用傳統絹織布藝手藝裝裱，具備藏式掛軸質感，可直接掛於佛堂或空間。')">傳統藏式裝裱</button>
-</div>
+      <!-- 規格選單 -->
+      <div class="option-title">規格：<strong id="selectedFrameName" style="color:#000;">畫芯</strong></div>
+      <div class="frame-options">
+        <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 8800, '【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。')">畫芯</button>
+        <button class="frame-btn" onclick="onFrameSelect(this, '傳統藏式裝裱', 12800, '【傳統藏式裝裱】採用傳統絹織布藝手藝裝裱，具備藏式掛軸質感，可直接掛於佛堂或空間。')">傳統藏式裝裱</button>
+      </div>
 
-<!-- 新增：規格動態介紹區 -->
-<div id="optionDescription" style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
-  【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
-</div>
+      <!-- 規格動態介紹區 -->
+      <div id="optionDescription" style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
+        【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
       </div>
 
       <!-- 數量調整 -->
@@ -291,35 +289,37 @@
         <button class="qty-btn" onclick="changeQuantity(1)">+</button>
       </div>
 
-      <!-- 下單按鈕（點擊直接跳轉） -->
+      <!-- 下單按鈕 -->
       <button class="checkout-btn" onclick="goToCheckout()">加入購物車 / 立即結帳</button>
     </div>
 
   </main>
 
   <script>
-    // 全域變數控制價格與數量
+    // 預設選擇【畫芯】對應金額 8800
     let basePrice = 8800;
     let currentQty = 1;
 
-    // 1. 點擊縮圖切換大圖功能
+    // 1. 縮圖切換
     function changeImage(element) {
       document.querySelectorAll('.thumb-item').forEach(img => img.classList.remove('active'));
       element.classList.add('active');
       document.getElementById('mainImage').src = element.src;
     }
 
-    // 2. 點擊框架按鈕切換選擇與價格
-    function onFrameSelect(buttonElement, frameName, price) {
+    // 2. 規格切換（含說明文字與金額更新）
+    function onFrameSelect(buttonElement, frameName, price, description) {
       document.querySelectorAll('.frame-btn').forEach(btn => btn.classList.remove('selected'));
       buttonElement.classList.add('selected');
       
       document.getElementById('selectedFrameName').innerText = frameName;
+      document.getElementById('optionDescription').innerText = description;
+      
       basePrice = price;
       calculateTotal();
     }
 
-    // 3. 數量加減點擊
+    // 3. 數量加減
     function changeQuantity(delta) {
       currentQty += delta;
       if (currentQty < 1) currentQty = 1;
@@ -327,17 +327,15 @@
       calculateTotal();
     }
 
-    // 4. 即時計算總金額並更新畫面
+    // 4. 即時計算金額
     function calculateTotal() {
       const total = basePrice * currentQty;
       document.getElementById('totalPriceDisplay').innerText = `NT$ ${total.toLocaleString()} TWD`;
     }
 
-    // 5. 點擊結帳按鈕跳轉至賣貨便
+    // 5. 跳轉賣貨便
     function goToCheckout() {
       const selectedFrame = document.getElementById('selectedFrameName').innerText;
-      
-      // ⚠️ 請在這裡貼上你自己的 7-11 賣貨便網址或綠界金流網址 ⚠️
       const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
       
       alert(`已為您選擇：【${selectedFrame}】 x ${currentQty} 件\n即將為您導向安全的結帳頁面！`);
