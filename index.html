@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>α ART GALLERY | 四臂觀音唐卡高精細微噴</title>
+  <title>α ART GALLERY | 原創唐卡藝術典藏</title>
   <style>
     * {
       box-sizing: border-box;
@@ -18,7 +18,7 @@
       line-height: 1.6;
     }
 
-    /* 頂部導覽列 */
+    /* 導覽列 */
     header {
       display: flex;
       justify-content: space-between;
@@ -47,193 +47,172 @@
       transition: color 0.2s;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: #000;
+      font-weight: 600;
     }
 
-    /* 商品主區域 */
-    .product-container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    /* 左側圖庫展示 */
-    .gallery-container {
+    /* 首頁 主 Banner */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/FourArmedGuanyin.jpg') center/cover;
+      height: 70vh;
       display: flex;
       flex-direction: column;
-      gap: 15px;
-    }
-
-    .main-image-box {
-      width: 100%;
-      height: 480px;
-      background-color: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 6px;
-      display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
-      padding: 10px;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
     }
 
-    .main-image-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: opacity 0.2s ease;
-    }
-
-    .thumb-list {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .thumb-item {
-      width: 60px;
-      height: 60px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      cursor: pointer;
-      object-fit: cover;
-      opacity: 0.6;
-      transition: all 0.2s;
-    }
-
-    .thumb-item:hover, .thumb-item.active {
-      opacity: 1;
-      border-color: #000;
-    }
-
-    /* 右側資訊區 */
-    .product-info {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-title {
-      font-size: 28px;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .price-bar {
-      margin-bottom: 25px;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-    }
-
-    .current-price {
-      font-size: 26px;
-      font-weight: 600;
-      color: #111;
-    }
-
-    .sale-tag {
-      background-color: #efefef;
-      padding: 2px 8px;
-      font-size: 12px;
-      border-radius: 3px;
-      color: #555;
-    }
-
-    /* 選項區塊 */
-    .option-title {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .frame-options {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+    .hero h1 {
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: 4px;
       margin-bottom: 15px;
     }
 
-    .frame-btn {
-      padding: 12px;
-      border: 1px solid #ccc;
-      background: #fff;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 14px;
-      text-align: center;
-      transition: all 0.2s;
-    }
-
-    .frame-btn:hover {
-      border-color: #666;
-    }
-
-    .frame-btn.selected {
-      background-color: #1a1a1a;
-      color: #fff;
-      border-color: #1a1a1a;
-    }
-
-    /* 購買按鈕 */
-    .checkout-btn {
-      width: 100%;
-      padding: 16px;
-      border: 1px solid #1a1a1a;
-      background-color: #1a1a1a;
-      color: #fff;
+    .hero p {
       font-size: 16px;
-      font-weight: 500;
-      cursor: pointer;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .hero-btn {
+      padding: 12px 32px;
+      background: #fff;
+      color: #111;
+      text-decoration: none;
+      font-size: 14px;
       letter-spacing: 2px;
       border-radius: 4px;
-      transition: background-color 0.2s;
-      margin-top: 10px;
+      transition: all 0.3s;
     }
 
-    .checkout-btn:hover {
-      background-color: #333;
+    .hero-btn:hover {
+      background: #1a1a1a;
+      color: #fff;
     }
 
-    /* 下方詳情介紹區塊 */
-    .details-section {
-      max-width: 900px;
-      margin: 80px auto 40px;
+    /* 區塊通用樣式 */
+    .section-container {
+      max-width: 1100px;
+      margin: 70px auto;
       padding: 0 20px;
-      border-top: 1px solid #eee;
-      padding-top: 50px;
     }
 
-    .section-title {
-      font-size: 22px;
-      font-weight: 500;
+    .section-header {
       text-align: center;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
-    }
-
-    .details-content {
-      font-size: 15px;
-      color: #444;
-      line-height: 1.8;
       margin-bottom: 40px;
     }
 
-    .details-content p {
-      margin-bottom: 15px;
+    .section-header h2 {
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
     }
 
-    .detail-img-box {
-      text-align: center;
-      margin: 30px 0;
+    .section-header p {
+      color: #777;
+      font-size: 14px;
     }
 
-    .detail-img-box img {
-      max-width: 100%;
+    /* 分類卡片區 (Collections) */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 350px;
       border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 25px;
+    }
+
+    .category-overlay h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .category-overlay span {
+      font-size: 12px;
+      opacity: 0.8;
+      letter-spacing: 1px;
+    }
+
+    /* 熱門作品卡片 (Featured Products) */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      background-color: #fcfcfc;
+      padding: 15px;
+    }
+
+    .product-card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-card-body h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .product-card-body .price {
+      font-weight: 600;
+      color: #1a1a1a;
+      font-size: 15px;
     }
 
     /* 頁尾 Footer */
@@ -244,7 +223,7 @@
       text-align: center;
       font-size: 13px;
       color: #888;
-      margin-top: 60px;
+      margin-top: 80px;
     }
 
     footer nav {
@@ -258,13 +237,8 @@
     }
 
     @media (max-width: 768px) {
-      .product-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      .frame-options {
-        grid-template-columns: 1fr;
-      }
+      .hero h1 { font-size: 28px; }
+      .category-grid, .product-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -274,77 +248,96 @@
   <header>
     <a href="index.html" class="logo">α ART GALLERY</a>
     <nav>
-      <a href="index.html">首頁</a>
+      <a href="index.html" class="active">首頁</a>
       <a href="collections.html">作品分類</a>
-      <a href="#details">作品介紹</a>
-      <a href="#notice">購買須知</a>
+      <a href="about.html">品牌故事與工藝</a>
+      <a href="reviews.html">顧客反饋與實景</a>
+      <a href="contact.html">聯絡我們</a>
     </nav>
   </header>
 
-  <main class="product-container">
+  <!-- 主視訊 Banner -->
+  <section class="hero">
+    <h1>原創唐卡 藝術微噴</h1>
+    <p>傳承藏傳佛教藝術之美 ‧ 典藏博物館級精緻微噴</p>
+    <a href="collections.html" class="hero-btn">探索完整作品集</a>
+  </section>
+
+  <!-- 1. 作品分類入口 (Collections) -->
+  <section class="section-container">
+    <div class="section-header">
+      <h2>— 作品分類 —</h2>
+      <p>按系列主題與典藏類別探索藝術作品</p>
+    </div>
     
-    <!-- 左側圖片區 -->
-    <div class="gallery-container">
-      <div class="main-image-box">
-        <img id="mainImage" src="FourArmedGuanyin.jpg" alt="主圖">
-      </div>
-      <div class="thumb-list">
-        <img class="thumb-item active" src="FourArmedGuanyin.jpg" onclick="changeImage(this)">
-        <img class="thumb-item" src="FourArmedGuanyinDetail.jpg" onclick="changeImage(this)">
-      </div>
-    </div>
+    <div class="category-grid">
+      <!-- 曼陀羅系列 -->
+      <a href="collections.html#mandala" class="category-card">
+        <img src="images/26Guanyin.jpg" alt="曼陀羅系列">
+        <div class="category-overlay">
+          <h3>曼陀羅系列</h3>
+          <span>Mandala Collection →</span>
+        </div>
+      </a>
 
-    <!-- 右側選購控制區 -->
-    <div class="product-info">
-      <h1 class="product-title">四臂觀音唐卡(高精細微噴)</h1>
-      
-      <div class="price-bar">
-        <span class="current-price" id="totalPriceDisplay">NT$ 8,800 TWD</span>
-        <span class="sale-tag">典藏微噴</span>
-      </div>
+      <!-- 尊勝菩薩系列 -->
+      <a href="collections.html#deities" class="category-card">
+        <img src="images/FourArmedGuanyin.jpg" alt="尊勝菩薩系列">
+        <div class="category-overlay">
+          <h3>尊勝菩薩系列</h3>
+          <span>Deities Collection →</span>
+        </div>
+      </a>
 
-      <!-- 規格選單 -->
-      <div class="option-title">規格：<strong id="selectedFrameName" style="color:#000;">畫芯</strong></div>
-      <div class="frame-options">
-        <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 8800, '【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。')">畫芯</button>
-        <button class="frame-btn" onclick="onFrameSelect(this, '傳統藏式裝裱', 12800, '【傳統藏式裝裱】採用傳統絹織布藝手藝裝裱，具備藏式掛軸質感，可直接掛於佛堂或空間。')">傳統藏式裝裱</button>
-      </div>
-
-      <!-- 規格動態介紹區 -->
-      <div id="optionDescription" style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
-        【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
-      </div>
-
-      <!-- 購買按鈕 -->
-      <button class="checkout-btn" onclick="goToCheckout()">我想購買</button>
-    </div>
-
-  </main>
-
-  <!-- 詳情介紹區塊 -->
-  <section class="details-section" id="details">
-    <h2 class="section-title">— 作品典藏與細節 —</h2>
-    <div class="details-content">
-      <p><strong>【四臂觀音】</strong> 為觀世音菩薩的化身之一，四臂代表「慈、悲、喜、捨」四無量心。作品呈現莊嚴慈悲之相，細節層次豐富，適合供養或藝術收藏。</p>
-      
-      <p><strong>【藝術微噴工藝】</strong> 本系列作品採用博物館級藝術微噴技術（Giclée Print），搭配純棉無酸藝術紙與高耐久顏料墨水，色彩還原度極高，能細膩呈現畫作筆觸與金屬色彩細節，長久保存不易退色。</p>
-
-      <div class="detail-img-box">
-        <img src="FourArmedGuanyinDetail.jpg" alt="細節展示">
-      </div>
+      <!-- 微噴複製品 / 原畫真跡 -->
+      <a href="collections.html#prints-originals" class="category-card">
+        <img src="images/Milarepa.jpg" alt="微噴與原畫">
+        <div class="category-overlay">
+          <h3>微噴複製品 / 原畫真跡</h3>
+          <span>Prints & Originals →</span>
+        </div>
+      </a>
     </div>
   </section>
 
-  <!-- 購買須知區塊 -->
-  <section class="details-section" id="notice" style="margin-top: 0; padding-top: 30px;">
-    <h2 class="section-title">— 購買與寄送須知 —</h2>
-    <div class="details-content">
-      <p>1. <strong>發貨時間：</strong> 畫芯商品下單後約 3-5 個工作天內出貨；藏式裝裱因手藝製作需約 7-10 個工作天。</p>
-      <p>2. <strong>包裝方式：</strong> 畫芯作品將以加厚防壓紙管捲裝寄送；裝裱掛軸則附保護盒包裝。</p>
-      <p>3. <strong>色差說明：</strong> 螢幕顯示器因設定不同可能略有色差，實際色彩以實品藝術微噴畫作主。</p>
+  <!-- 2. 精選商品區 (Featured Products) -->
+  <section class="section-container">
+    <div class="section-header">
+      <h2>— 精選典藏作品 —</h2>
+      <p>提供博物館級高精細藝術微噴與藏式絹織裝裱</p>
+    </div>
+
+    <div class="product-grid">
+      <!-- 商品 1：四臂觀音 -->
+      <a href="product-four-armed-guanyin.html" class="product-card">
+        <img src="images/FourArmedGuanyin.jpg" alt="四臂觀音唐卡">
+        <div class="product-card-body">
+          <h3>四臂觀音唐卡(高精細微噴)</h3>
+          <div class="price">NT$ 8,800 起</div>
+        </div>
+      </a>
+
+      <!-- 商品 2：綠度母 -->
+      <a href="product-four-armed-guanyin.html" class="product-card">
+        <img src="images/26Guanyin.jpg" alt="綠度母/曼陀羅">
+        <div class="product-card-body">
+          <h3>綠度母曼陀羅唐卡</h3>
+          <div class="price">NT$ 9,200 起</div>
+        </div>
+      </a>
+
+      <!-- 商品 3：密勒日巴尊者 -->
+      <a href="product-four-armed-guanyin.html" class="product-card">
+        <img src="images/Milarepa.jpg" alt="密勒日巴尊者">
+        <div class="product-card-body">
+          <h3>密勒日巴尊者唐卡</h3>
+          <div class="price">NT$ 8,500 起</div>
+        </div>
+      </a>
     </div>
   </section>
 
+  <!-- 頁尾 -->
   <footer>
     <nav>
       <a href="index.html">首頁</a> | 
@@ -355,38 +348,6 @@
     </nav>
     <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    let basePrice = 8800;
-
-    // 1. 縮圖切換
-    function changeImage(element) {
-      document.querySelectorAll('.thumb-item').forEach(img => img.classList.remove('active'));
-      element.classList.add('active');
-      document.getElementById('mainImage').src = element.src;
-    }
-
-    // 2. 規格切換（含說明文字與金額更新）
-    function onFrameSelect(buttonElement, frameName, price, description) {
-      document.querySelectorAll('.frame-btn').forEach(btn => btn.classList.remove('selected'));
-      buttonElement.classList.add('selected');
-      
-      document.getElementById('selectedFrameName').innerText = frameName;
-      document.getElementById('optionDescription').innerText = description;
-      
-      basePrice = price;
-      document.getElementById('totalPriceDisplay').innerText = `NT$ ${basePrice.toLocaleString()} TWD`;
-    }
-
-    // 3. 跳轉結帳頁面
-    function goToCheckout() {
-      const selectedFrame = document.getElementById('selectedFrameName').innerText;
-      const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
-      
-      alert(`已為您選擇：【${selectedFrame}】\n即將為您導向安全的結帳頁面！`);
-      window.location.href = myPaymentUrl;
-    }
-  </script>
 
 </body>
 </html>
