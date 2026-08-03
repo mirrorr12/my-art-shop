@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>α ART GALLERY | 釋迦牟尼佛唐卡高精細微噴</title>
+  
+  <!-- 社群 Icon 圖示庫 (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     * {
       box-sizing: border-box;
@@ -47,8 +51,9 @@
       transition: color 0.2s;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active {
       color: #000;
+      font-weight: 600;
     }
 
     /* 商品主區域 */
@@ -194,25 +199,67 @@
       margin-bottom: 15px;
     }
 
-    /* 頁尾 Footer */
+    /* 頁尾 Footer 樣式 */
     footer {
-      background-color: #fff;
-      border-top: 1px solid #eee;
-      padding: 40px 8%;
+      background-color: #181818;
+      color: #ccc;
+      padding: 60px 20px 40px;
+      border-top: 1px solid #282828;
+      margin-top: 80px;
+    }
+
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      font-size: 13px;
-      color: #888;
-      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
     }
 
-    footer nav {
-      margin-bottom: 15px;
+    .social-links {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
     }
 
-    footer nav a {
-      color: #666;
+    .social-links a {
+      color: #aaa;
+      font-size: 22px;
+      transition: color 0.3s ease, transform 0.2s ease;
       text-decoration: none;
-      margin: 0 8px;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: #888;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+    .footer-info {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.8;
+      letter-spacing: 1px;
     }
 
     @media (max-width: 768px) {
@@ -230,9 +277,9 @@
     <a href="../index.html" class="logo">α ART GALLERY</a>
     <nav>
       <a href="../index.html">首頁</a>
-      <a href="collections.html">作品分類</a>
-      <a href="#details">作品介紹</a>
-      <a href="#notice">購買須知</a>
+      <a href="shop-prints.html" class="active">典藏商店</a>
+      <a href="gallery-artworks.html">原作賞析</a>
+      <a href="about-artist.html">畫家介紹</a>
     </nav>
   </header>
 
@@ -291,21 +338,36 @@
     </div>
   </section>
 
+  <!-- 頁尾 Footer (包含 FB 與 IG 社群連結) -->
   <footer>
-    <nav>
-      <a href="../index.html">首頁</a> | 
-      <a href="collections.html">作品分類</a> | 
-      <a href="about.html">品牌故事</a> | 
-      <a href="reviews.html">顧客實景</a> | 
-      <a href="contact.html">聯絡我們</a>
-    </nav>
-    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+    <div class="footer-container">
+      
+      <!-- 社群連結 Icon 列 -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+
+      <!-- 頁尾選單 -->
+      <nav class="footer-nav">
+        <a href="../index.html">首頁</a>
+        <a href="shop-prints.html">典藏商店</a>
+        <a href="gallery-artworks.html">原作賞析</a>
+        <a href="about-artist.html">畫家介紹</a>
+      </nav>
+
+      <!-- 版權文字 -->
+      <div class="footer-info">
+        <p>Taiwan ‧ Kaohsiung</p>
+        <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+      </div>
+
+    </div>
   </footer>
 
   <script>
     // 跳轉結帳頁面
     function goToCheckout() {
-      // ⚠️ 如果釋迦牟尼佛有獨立的賣貨便/綠界網址，請替換這行：
       const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
       
       alert(`已為您選擇：【釋迦牟尼佛唐卡 - 典藏畫芯】\n即將為您導向安全的結帳頁面！`);
