@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>α ART GALLERY | 唐卡原作線上美展賞析</title>
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; 
+    }
+    
+    /* 深色藝廊氛圍 */
+    body { 
+      background-color: #121212; 
+      color: #e0e0e0; 
+      line-height: 1.8; 
+    }
+
+    /* 頂部導覽列 */
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 20px 8%; 
+      background: #1a1a1a; 
+      border-bottom: 1px solid #282828; 
+      position: sticky; 
+      top: 0; 
+      z-index: 100; 
+    }
+
+    .logo { 
+      font-size: 22px; 
+      font-weight: 600; 
+      letter-spacing: 2px; 
+      color: #fff; 
+      text-decoration: none; 
+    }
+
+    nav a { 
+      margin: 0 12px; 
+      text-decoration: none; 
+      color: #aaa; 
+      font-size: 14px; 
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #fff;
+    }
+
+    /* 頁面標頭 */
+    .page-header { 
+      text-align: center; 
+      padding: 60px 20px 40px; 
+      background: #181818; 
+      border-bottom: 1px solid #252525; 
+    }
+
+    .page-header h1 { 
+      font-size: 30px; 
+      font-weight: 300; 
+      letter-spacing: 4px; 
+      margin-bottom: 10px; 
+      color: #f5f5f5; 
+    }
+
+    .page-header p { 
+      color: #888; 
+      font-size: 14px; 
+      letter-spacing: 1px; 
+    }
+
+    /* 作品賞析容器 */
+    .art-container { 
+      max-width: 1000px; 
+      margin: 50px auto; 
+      padding: 0 20px; 
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* 單張作品賞析卡片 */
+    .art-card { 
+      background: #1a1a1a; 
+      border: 1px solid #2a2a2a; 
+      border-radius: 8px; 
+      overflow: hidden; 
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      transition: border-color 0.3s ease; 
+    }
+
+    .art-card:hover { 
+      border-color: #444; 
+    }
+
+    .art-img { 
+      width: 100%; 
+      height: 420px; 
+      background: #0d0d0d; 
+      padding: 25px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+    }
+
+    .art-img img { 
+      max-width: 100%; 
+      max-height: 100%; 
+      object-fit: contain; 
+      border-radius: 2px;
+    }
+
+    .art-info { 
+      padding: 35px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .art-info h2 { 
+      font-size: 24px; 
+      font-weight: 400; 
+      letter-spacing: 2px; 
+      margin-bottom: 12px; 
+      color: #fff; 
+      border-bottom: 1px solid #333;
+      padding-bottom: 12px;
+    }
+
+    .art-info .subtitle {
+      font-size: 13px;
+      color: #c5a059; /* 典藏金 */
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .art-info .desc { 
+      font-size: 14px; 
+      color: #bbb; 
+      line-height: 1.8;
+      font-weight: 300; 
+    }
+
+    footer { 
+      background: #0d0d0d; 
+      border-top: 1px solid #222; 
+      padding: 40px 8%; 
+      text-align: center; 
+      font-size: 13px; 
+      color: #666; 
+      margin-top: 80px; 
+    }
+
+    @media (max-width: 768px) {
+      .art-card {
+        grid-template-columns: 1fr;
+      }
+      .art-img {
+        height: 320px;
+      }
+      .art-info {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <a href="../index.html" class="logo">α ART GALLERY</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="shop-prints.html">藝術商店</a>
+      <a href="gallery-artworks.html" class="active">原作賞析</a>
+      <a href="about-artist.html">畫家介紹</a>
+    </nav>
+  </header>
+
+  <!-- 標題說明 -->
+  <section class="page-header">
+    <h1>唐卡藝術 ‧ 原作賞析</h1>
+    <p>傳承藏密繪畫筆意 ‧ 靜心品味線條與礦物顏料的色彩流轉</p>
+  </section>
+
+  <!-- 4 幅作品線上展覽 -->
+  <main class="art-container">
+
+    <!-- 1. 四臂觀音 -->
+    <article class="art-card">
+      <div class="art-img">
+        <img src="../images/FourArmedGuanyin.jpg" alt="四臂觀音原作">
+      </div>
+      <div class="art-info">
+        <h2>四臂觀音</h2>
+        <div class="subtitle">慈悲與圓滿之化身</div>
+        <p class="desc">
+          四臂代表「慈、悲、喜、捨」四無量心。畫像線條細緻流暢，菩薩尊容寂靜慈祥，雙手合十於胸前開敷蓮花，後兩手各持念珠與蓮花，展現極致的平靜與救度力量。
+        </p>
+      </div>
+    </article>
+
+    <!-- 2. 三面二十六臂觀音 -->
+    <article class="art-card">
+      <div class="art-img">
+        <img src="../images/26Guanyin.jpg" alt="三面二十六臂觀音原作">
+      </div>
+      <div class="art-info">
+        <h2>三面二十六臂觀音</h2>
+        <div class="subtitle">廣大應化 ‧ 宏大威德法相</div>
+        <p class="desc">
+          為觀音菩薩極具威德之廣大化身。三面象徵斷除三毒，二十六臂各持殊勝法器與手印，構圖極其嚴謹繁複，展現隨類應化、救度一切眾生之廣大宏願。
+        </p>
+      </div>
+    </article>
+
+    <!-- 3. 密勒日巴尊者 -->
+    <article class="art-card">
+      <div class="art-img">
+        <img src="../images/Milarepa.jpg" alt="密勒日巴尊者原作">
+      </div>
+      <div class="art-info">
+        <h2>密勒日巴尊者</h2>
+        <div class="subtitle">雪山瑜伽士 ‧ 清淨智慧</div>
+        <p class="desc">
+          藏傳佛教噶舉派一代宗師。尊者右手聽歌、身著白衣，畫風帶有濃厚的雪山自然質感與岩石筆意，象徵對佛法真諦的清淨洞察與無上修行。
+        </p>
+      </div>
+    </article>
+
+    <!-- 4. 釋迦牟尼佛 -->
+    <article class="art-card">
+      <div class="art-img">
+        <img src="../images/Buddha.jpg" alt="釋迦牟尼佛原作">
+        </div>
+      <div class="art-info">
+        <h2>釋迦牟尼佛</h2>
+        <div class="subtitle">本師圓滿法相 ‧ 寂靜智慧</div>
+        <p class="desc">
+          法相結經典「降魔觸地印」，右手指地、左手托缽，象徵悟道成佛。背景雲彩與金飾細節還原傳統度量衡之美，體現極致的莊嚴與清淨。
+        </p>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
