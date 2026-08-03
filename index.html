@@ -168,11 +168,11 @@
       letter-spacing: 1px;
     }
 
-    /* 熱門作品卡片 (Featured Products) */
+    /* 熱門作品卡片 (Featured Products - 4格網格) */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
     }
 
     .product-card {
@@ -192,19 +192,19 @@
 
     .product-card img {
       width: 100%;
-      height: 280px;
+      height: 250px;
       object-fit: contain;
       background-color: #fcfcfc;
       padding: 15px;
     }
 
     .product-card-body {
-      padding: 20px;
+      padding: 15px;
       text-align: center;
     }
 
     .product-card-body h3 {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 500;
       margin-bottom: 8px;
     }
@@ -212,7 +212,7 @@
     .product-card-body .price {
       font-weight: 600;
       color: #1a1a1a;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     /* 頁尾 Footer */
@@ -236,7 +236,11 @@
       margin: 0 8px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
+      .product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
       .hero h1 { font-size: 28px; }
       .category-grid, .product-grid { grid-template-columns: 1fr; }
     }
@@ -300,7 +304,7 @@
     </div>
   </section>
 
-  <!-- 2. 精選商品區 (Featured Products) -->
+  <!-- 2. 精選商品區 (4個經典商品) -->
   <section class="section-container">
     <div class="section-header">
       <h2>— 精選典藏作品 —</h2>
@@ -308,30 +312,39 @@
     </div>
 
     <div class="product-grid">
-      <!-- 商品 1：四臂觀音 (導向 pages/ 資料夾) -->
+      <!-- 商品 1：四臂觀音 -->
       <a href="pages/product-four-armed-guanyin.html" class="product-card">
         <img src="images/FourArmedGuanyin.jpg" alt="四臂觀音唐卡">
         <div class="product-card-body">
-          <h3>四臂觀音唐卡(高精細微噴)</h3>
+          <h3>四臂觀音唐卡</h3>
           <div class="price">NT$ 8,800 起</div>
         </div>
       </a>
 
-      <!-- 商品 2：綠度母 -->
-      <a href="pages/product-four-armed-guanyin.html" class="product-card">
-        <img src="images/26Guanyin.jpg" alt="綠度母/曼陀羅">
+      <!-- 商品 2：三面二十六臂觀音 -->
+      <a href="pages/product-26guanyin.html" class="product-card">
+        <img src="images/26Guanyin.jpg" alt="三面二十六臂觀音唐卡">
         <div class="product-card-body">
-          <h3>綠度母曼陀羅唐卡</h3>
+          <h3>三面二十六臂觀音唐卡</h3>
           <div class="price">NT$ 9,200 起</div>
         </div>
       </a>
 
       <!-- 商品 3：密勒日巴尊者 -->
-      <a href="pages/product-four-armed-guanyin.html" class="product-card">
-        <img src="images/Milarepa.jpg" alt="密勒日巴尊者">
+      <a href="pages/product-milarepa.html" class="product-card">
+        <img src="images/Milarepa.jpg" alt="密勒日巴尊者唐卡">
         <div class="product-card-body">
           <h3>密勒日巴尊者唐卡</h3>
           <div class="price">NT$ 8,500 起</div>
+        </div>
+      </a>
+
+      <!-- 商品 4：釋迦牟尼佛 -->
+      <a href="pages/product-buddha.html" class="product-card">
+        <img src="images/Buddha.jpg" alt="釋迦牟尼佛唐卡">
+        <div class="product-card-body">
+          <h3>釋迦牟尼佛唐卡</h3>
+          <div class="price">NT$ 8,200 起</div>
         </div>
       </a>
     </div>
