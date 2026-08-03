@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>α ART GALLERY | 四臂觀音唐卡高精細微噴</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* 商品主區域 */
+    .product-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    /* 左側圖庫展示 */
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .main-image-box {
+      width: 100%;
+      height: 480px;
+      background-color: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .main-image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
+    }
+
+    .thumb-list {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .thumb-item {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      object-fit: cover;
+      opacity: 0.6;
+      transition: all 0.2s;
+    }
+
+    .thumb-item:hover, .thumb-item.active {
+      opacity: 1;
+      border-color: #000;
+    }
+
+    /* 右側資訊區 */
+    .product-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-title {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .price-bar {
+      margin-bottom: 25px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .current-price {
+      font-size: 26px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .sale-tag {
+      background-color: #efefef;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #555;
+    }
+
+    /* 選項區塊 */
+    .option-title {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .frame-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .frame-btn {
+      padding: 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .frame-btn:hover {
+      border-color: #666;
+    }
+
+    .frame-btn.selected {
+      background-color: #1a1a1a;
+      color: #fff;
+      border-color: #1a1a1a;
+    }
+
+    /* 購買按鈕 */
+    .checkout-btn {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #1a1a1a;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .checkout-btn:hover {
+      background-color: #333;
+    }
+
+    /* 下方詳情介紹區塊 */
+    .details-section {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      border-top: 1px solid #eee;
+      padding-top: 50px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .details-content {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .details-content p {
+      margin-bottom: 15px;
+    }
+
+    .detail-img-box {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .detail-img-box img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+
+    /* 頁尾 Footer */
+    footer {
+      background-color: #fff;
+      border-top: 1px solid #eee;
+      padding: 40px 8%;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 60px;
+    }
+
+    footer nav {
+      margin-bottom: 15px;
+    }
+
+    footer nav a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .frame-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <a href="index.html" class="logo">α ART GALLERY</a>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="collections.html">作品分類</a>
+      <a href="#details">作品介紹</a>
+      <a href="#notice">購買須知</a>
+    </nav>
+  </header>
+
+  <main class="product-container">
+    
+    <!-- 左側圖片區（已更新路徑） -->
+    <div class="gallery-container">
+      <div class="main-image-box">
+        <img id="mainImage" src="images/FourArmedGuanyin.jpg" alt="主圖">
+      </div>
+      <div class="thumb-list">
+        <img class="thumb-item active" src="images/FourArmedGuanyin.jpg" onclick="changeImage(this)">
+        <img class="thumb-item" src="images/FourArmedGuanyinDetail.jpg" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <!-- 右側選購控制區 -->
+    <div class="product-info">
+      <h1 class="product-title">四臂觀音唐卡(高精細微噴)</h1>
+      
+      <div class="price-bar">
+        <span class="current-price" id="totalPriceDisplay">NT$ 8,800 TWD</span>
+        <span class="sale-tag">典藏微噴</span>
+      </div>
+
+      <!-- 規格選單 -->
+      <div class="option-title">規格：<strong id="selectedFrameName" style="color:#000;">畫芯</strong></div>
+      <div class="frame-options">
+        <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 8800, '【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。')">畫芯</button>
+        <button class="frame-btn" onclick="onFrameSelect(this, '傳統藏式裝裱', 12800, '【傳統藏式裝裱】採用傳統絹織布藝手藝裝裱，具備藏式掛軸質感，可直接掛於佛堂或空間。')">傳統藏式裝裱</button>
+      </div>
+
+      <!-- 規格動態介紹區 -->
+      <div id="optionDescription" style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
+        【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
+      </div>
+
+      <!-- 購買按鈕 -->
+      <button class="checkout-btn" onclick="goToCheckout()">我想購買</button>
+    </div>
+
+  </main>
+
+  <!-- 詳情介紹區塊 -->
+  <section class="details-section" id="details">
+    <h2 class="section-title">— 作品典藏與細節 —</h2>
+    <div class="details-content">
+      <p><strong>【四臂觀音】</strong> 為觀世音菩薩的化身之一，四臂代表「慈、悲、喜、捨」四無量心。作品呈現莊嚴慈悲之相，細節層次豐富，適合供養或藝術收藏。</p>
+      
+      <p><strong>【藝術微噴工藝】</strong> 本系列作品採用博物館級藝術微噴技術（Giclée Print），搭配純棉無酸藝術紙與高耐久顏料墨水，色彩還原度極高，能細膩呈現畫作筆觸與金屬色彩細節，長久保存不易退色。</p>
+
+      <div class="detail-img-box">
+        <img src="images/FourArmedGuanyinDetail.jpg" alt="細節展示">
+      </div>
+    </div>
+  </section>
+
+  <!-- 購買須知區塊 -->
+  <section class="details-section" id="notice" style="margin-top: 0; padding-top: 30px;">
+    <h2 class="section-title">— 購買與寄送須知 —</h2>
+    <div class="details-content">
+      <p>1. <strong>發貨時間：</strong> 畫芯商品下單後約 3-5 個工作天內出貨；藏式裝裱因手藝製作需約 7-10 個工作天。</p>
+      <p>2. <strong>包裝方式：</strong> 畫芯作品將以加厚防壓紙管捲裝寄送；裝裱掛軸則附保護盒包裝。</p>
+      <p>3. <strong>色差說明：</strong> 螢幕顯示器因設定不同可能略有色差，實際色彩以實品藝術微噴畫作主。</p>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="index.html">首頁</a> | 
+      <a href="collections.html">作品分類</a> | 
+      <a href="about.html">品牌故事</a> | 
+      <a href="reviews.html">顧客實景</a> | 
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    let basePrice = 8800;
+
+    // 1. 縮圖切換
+    function changeImage(element) {
+      document.querySelectorAll('.thumb-item').forEach(img => img.classList.remove('active'));
+      element.classList.add('active');
+      document.getElementById('mainImage').src = element.src;
+    }
+
+    // 2. 規格切換
+    function onFrameSelect(buttonElement, frameName, price, description) {
+      document.querySelectorAll('.frame-btn').forEach(btn => btn.classList.remove('selected'));
+      buttonElement.classList.add('selected');
+      
+      document.getElementById('selectedFrameName').innerText = frameName;
+      document.getElementById('optionDescription').innerText = description;
+      
+      basePrice = price;
+      document.getElementById('totalPriceDisplay').innerText = `NT$ ${basePrice.toLocaleString()} TWD`;
+    }
+
+    // 3. 跳轉結帳頁面
+    function goToCheckout() {
+      const selectedFrame = document.getElementById('selectedFrameName').innerText;
+      const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
+      
+      alert(`已為您選擇：【${selectedFrame}】\n即將為您導向安全的結帳頁面！`);
+      window.location.href = myPaymentUrl;
+    }
+  </script>
+
+</body>
+</html>
