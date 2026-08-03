@@ -191,6 +191,7 @@
       letter-spacing: 2px;
       border-radius: 4px;
       transition: background-color 0.2s;
+      margin-top: 10px;
     }
 
     .checkout-btn:hover {
@@ -380,7 +381,6 @@
     // 3. 跳轉結帳頁面
     function goToCheckout() {
       const selectedFrame = document.getElementById('selectedFrameName').innerText;
-      // ⚠️ 綠界或 7-11 賣貨便網址貼在這裡：
       const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
       
       alert(`已為您選擇：【${selectedFrame}】\n即將為您導向安全的結帳頁面！`);
