@@ -57,8 +57,8 @@
 
     /* 主內容區塊 */
     .artist-container { 
-      max-width: 900px; 
-      margin: 60px auto; 
+      max-width: 960px; 
+      margin: 50px auto; 
       padding: 0 20px; 
     }
     
@@ -80,14 +80,25 @@
       letter-spacing: 1px; 
     }
 
-    /* 主形象圖 (繪畫過程) */
+    /* 左右雙欄英雄區塊 (Hero Split Layout) */
+    .artist-hero-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 35px;
+      align-items: center;
+      background: #fff;
+      padding: 30px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    }
+
     .hero-drawing-box {
       width: 100%;
-      max-height: 520px;
+      height: 380px;
       overflow: hidden;
       border-radius: 8px;
-      margin-bottom: 40px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
     }
 
     .hero-drawing-box img {
@@ -98,11 +109,29 @@
       display: block;
     }
 
+    .hero-intro h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+    }
+
+    .hero-intro p {
+      color: #444;
+      font-size: 15px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* 通用文章卡片 */
     .artist-content { 
       background: #fff; 
-      padding: 40px; 
+      padding: 35px 40px; 
       border: 1px solid #eee; 
-      border-radius: 8px; 
+      border-radius: 12px; 
       margin-bottom: 30px; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
@@ -120,7 +149,11 @@
     .artist-content p { 
       color: #444; 
       font-size: 15px; 
-      margin-bottom: 20px; 
+      margin-bottom: 15px; 
+    }
+
+    .artist-content p:last-child {
+      margin-bottom: 0;
     }
 
     /* 京都寫真圖集 (相簿網格) */
@@ -132,7 +165,7 @@
     }
 
     .photo-item {
-      height: 320px;
+      height: 280px;
       border-radius: 6px;
       overflow: hidden;
       background-color: #f0f0f0;
@@ -212,12 +245,21 @@
       letter-spacing: 1px;
     }
 
+    /* RWD 手機版響應式調整 */
     @media (max-width: 768px) {
+      .artist-hero-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+      }
+      .hero-drawing-box {
+        height: 280px;
+      }
       .photo-grid {
         grid-template-columns: 1fr;
       }
       .photo-item {
-        height: 380px;
+        height: 320px;
       }
     }
   </style>
@@ -241,16 +283,20 @@
       <p>傳承藏密繪畫筆意 ‧ 靜心筆觸與宗教藝術之美</p>
     </div>
 
-    <!-- 作畫主形象照 -->
-    <div class="hero-drawing-box">
-      <img src="../images/drawing.jpg" alt="曾雅蘭老師繪製唐卡過程">
+    <!-- 左圖右文：主形象照與簡介 -->
+    <div class="artist-hero-grid">
+      <div class="hero-drawing-box">
+        <img src="../images/drawing.jpg" alt="曾雅蘭老師繪製唐卡過程">
+      </div>
+      <div class="hero-intro">
+        <h2>關於曾雅蘭 (Artist Profile)</h2>
+        <p>唐卡畫師曾雅蘭，專注於藏傳佛教唐卡繪畫藝術。修習唐卡藝術多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。</p>
+        <br>
+        <p>每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與靜心能量融入筆觸之中。</p>
+      </div>
     </div>
 
-    <div class="artist-content">
-      <h2>關於曾雅蘭 (Artist Profile)</h2>
-      <p>唐卡畫師曾雅蘭，專注於藏傳佛教唐卡繪畫藝術。修習唐卡藝術多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與靜心能量融入筆觸之中。</p>
-    </div>
-
+    <!-- 繪製工藝 -->
     <div class="artist-content">
       <h2>繪製工藝與創作理念 (Craftsmanship)</h2>
       <p><strong>1. 天然礦物顏料：</strong> 使用金箔、綠松石、孔雀石、朱砂等天然礦物顏料入畫，色彩經久不退，呈現莊嚴之金屬光澤與色彩層次。</p>
