@@ -57,14 +57,14 @@
 
     /* 主內容區塊 */
     .artist-container { 
-      max-width: 850px; 
+      max-width: 900px; 
       margin: 60px auto; 
       padding: 0 20px; 
     }
     
     .artist-profile { 
       text-align: center; 
-      margin-bottom: 50px; 
+      margin-bottom: 40px; 
     }
 
     .artist-profile h1 { 
@@ -78,6 +78,24 @@
       color: #777; 
       font-size: 15px; 
       letter-spacing: 1px; 
+    }
+
+    /* 主形象圖 (繪畫過程) */
+    .hero-drawing-box {
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .hero-drawing-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     .artist-content { 
@@ -103,6 +121,32 @@
       color: #444; 
       font-size: 15px; 
       margin-bottom: 20px; 
+    }
+
+    /* 京都寫真圖集 (相簿網格) */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-item {
+      height: 320px;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-item:hover img {
+      transform: scale(1.04);
     }
 
     /* 頁尾 Footer 樣式 */
@@ -167,6 +211,15 @@
       line-height: 1.8;
       letter-spacing: 1px;
     }
+
+    @media (max-width: 768px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+      .photo-item {
+        height: 380px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -188,6 +241,11 @@
       <p>傳承藏密繪畫筆意 ‧ 靜心筆觸與宗教藝術之美</p>
     </div>
 
+    <!-- 作畫主形象照 -->
+    <div class="hero-drawing-box">
+      <img src="../images/drawing.jpg" alt="曾雅蘭老師繪製唐卡過程">
+    </div>
+
     <div class="artist-content">
       <h2>關於曾雅蘭 (Artist Profile)</h2>
       <p>唐卡畫師曾雅蘭，專注於藏傳佛教唐卡繪畫藝術。修習唐卡藝術多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與靜心能量融入筆觸之中。</p>
@@ -199,9 +257,21 @@
       <p><strong>2. 嚴謹度量衡規範：</strong> 嚴格遵循傳統唐卡度量衡規範，從菩薩尊容、手印至法器比例皆經過精確計算，展現圓滿莊嚴之慈悲法相。</p>
       <p><strong>3. 典藏級微噴藝術：</strong> 為了讓更多喜愛唐卡藝術的藏家能典藏作品，我們採用博物館級高精細微噴技術，忠實呈現原作線條與豐富細節。</p>
     </div>
+
+    <!-- 生活寫真與人文紀錄 -->
+    <div class="artist-content">
+      <h2>生活印象 ‧ 旅途與靜心 (Impressions)</h2>
+      <p>藝術源於對生命的體悟。在漫步與創作之間，汲取自然與萬物的靜謐靈感，將一份從容與定靜融入筆尖。</p>
+      
+      <div class="photo-grid">
+        <div class="photo-item"><img src="../images/kyoto1.jpg" alt="曾雅蘭老師人文寫真 1"></div>
+        <div class="photo-item"><img src="../images/kyoto2.jpg" alt="曾雅蘭老師人文寫真 2"></div>
+        <div class="photo-item"><img src="../images/kyoto3.jpg" alt="曾雅蘭老師人文寫真 3"></div>
+      </div>
+    </div>
   </main>
 
-  <!-- 頁尾 Footer (包含 FB 與 IG 社群連結) -->
+  <!-- 頁尾 Footer -->
   <footer>
     <div class="footer-container">
       
