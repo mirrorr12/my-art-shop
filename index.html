@@ -178,39 +178,6 @@
       border-color: #1a1a1a;
     }
 
-    /* 數量選擇器 */
-    .qty-box {
-      display: flex;
-      align-items: center;
-      border: 1px solid #ccc;
-      width: fit-content;
-      border-radius: 4px;
-      margin-bottom: 30px;
-      background: #fff;
-    }
-
-    .qty-btn {
-      width: 38px;
-      height: 38px;
-      background: none;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      user-select: none;
-    }
-
-    .qty-btn:active {
-      background-color: #eee;
-    }
-
-    .qty-input {
-      width: 45px;
-      text-align: center;
-      border: none;
-      font-size: 15px;
-      outline: none;
-    }
-
     /* 購買按鈕 */
     .checkout-btn {
       width: 100%;
@@ -347,15 +314,7 @@
         【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
       </div>
 
-      <!-- 數量調整 -->
-      <div class="option-title">購買數量</div>
-      <div class="qty-box">
-        <button class="qty-btn" onclick="changeQuantity(-1)">-</button>
-        <input type="text" class="qty-input" id="qtyInput" value="1" readonly>
-        <button class="qty-btn" onclick="changeQuantity(1)">+</button>
-      </div>
-
-      <!-- 下單按鈕（已更新為「我想購買」） -->
+      <!-- 購買按鈕 -->
       <button class="checkout-btn" onclick="goToCheckout()">我想購買</button>
     </div>
 
@@ -398,7 +357,6 @@
 
   <script>
     let basePrice = 8800;
-    let currentQty = 1;
 
     // 1. 縮圖切換
     function changeImage(element) {
@@ -416,30 +374,16 @@
       document.getElementById('optionDescription').innerText = description;
       
       basePrice = price;
-      calculateTotal();
+      document.getElementById('totalPriceDisplay').innerText = `NT$ ${basePrice.toLocaleString()} TWD`;
     }
 
-    // 3. 數量加減
-    function changeQuantity(delta) {
-      currentQty += delta;
-      if (currentQty < 1) currentQty = 1;
-      document.getElementById('qtyInput').value = currentQty;
-      calculateTotal();
-    }
-
-    // 4. 即時計算金額
-    function calculateTotal() {
-      const total = basePrice * currentQty;
-      document.getElementById('totalPriceDisplay').innerText = `NT$ ${total.toLocaleString()} TWD`;
-    }
-
-    // 5. 跳轉結帳頁面
+    // 3. 跳轉結帳頁面
     function goToCheckout() {
       const selectedFrame = document.getElementById('selectedFrameName').innerText;
       // ⚠️ 綠界或 7-11 賣貨便網址貼在這裡：
       const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
       
-      alert(`已為您選擇：【${selectedFrame}】 x ${currentQty} 件\n即將為您導向安全的結帳頁面！`);
+      alert(`已為您選擇：【${selectedFrame}】\n即將為您導向安全的結帳頁面！`);
       window.location.href = myPaymentUrl;
     }
   </script>
