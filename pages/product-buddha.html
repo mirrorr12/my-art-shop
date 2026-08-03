@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>α ART GALLERY | 釋迦牟尼佛唐卡高精細微噴</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* 頂部導覽列 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background-color: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* 商品主區域 */
+    .product-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    /* 左側圖庫展示 */
+    .gallery-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .main-image-box {
+      width: 100%;
+      height: 480px;
+      background-color: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 10px;
+    }
+
+    .main-image-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
+    }
+
+    /* 右側資訊區 */
+    .product-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-title {
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .price-bar {
+      margin-bottom: 25px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .current-price {
+      font-size: 26px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .sale-tag {
+      background-color: #efefef;
+      padding: 2px 8px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #555;
+    }
+
+    /* 選項區塊 */
+    .option-title {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .frame-options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .frame-btn {
+      padding: 12px;
+      border: 1px solid #1a1a1a;
+      background: #1a1a1a;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+      cursor: default;
+    }
+
+    /* 購買按鈕 */
+    .checkout-btn {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #1a1a1a;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 2px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    .checkout-btn:hover {
+      background-color: #333;
+    }
+
+    /* 下方詳情介紹區塊 */
+    .details-section {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 0 20px;
+      border-top: 1px solid #eee;
+      padding-top: 50px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .details-content {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .details-content p {
+      margin-bottom: 15px;
+    }
+
+    /* 頁尾 Footer */
+    footer {
+      background-color: #fff;
+      border-top: 1px solid #eee;
+      padding: 40px 8%;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 60px;
+    }
+
+    footer nav {
+      margin-bottom: 15px;
+    }
+
+    footer nav a {
+      color: #666;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導覽列 -->
+  <header>
+    <a href="../index.html" class="logo">α ART GALLERY</a>
+    <nav>
+      <a href="../index.html">首頁</a>
+      <a href="collections.html">作品分類</a>
+      <a href="#details">作品介紹</a>
+      <a href="#notice">購買須知</a>
+    </nav>
+  </header>
+
+  <main class="product-container">
+    
+    <!-- 左側圖片區 -->
+    <div class="gallery-container">
+      <div class="main-image-box">
+        <img id="mainImage" src="../images/Buddha.jpg" alt="釋迦牟尼佛主圖">
+      </div>
+    </div>
+
+    <!-- 右側選購控制區 -->
+    <div class="product-info">
+      <h1 class="product-title">釋迦牟尼佛唐卡(高精細微噴)</h1>
+      
+      <div class="price-bar">
+        <span class="current-price">NT$ 8,200 TWD</span>
+        <span class="sale-tag">典藏微噴</span>
+      </div>
+
+      <!-- 規格選單 (僅畫芯) -->
+      <div class="option-title">規格：<strong>典藏畫芯 (無裝裱)</strong></div>
+      <div class="frame-options">
+        <div class="frame-btn">典藏畫芯</div>
+      </div>
+
+      <!-- 規格簡介區 -->
+      <div style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
+        【典藏畫芯】本作品僅提供高精細藝術微噴畫芯，不含布藝裝裱或外框，方便您依個人喜好自行至框藝店進行裝裱設計。
+      </div>
+
+      <!-- 購買按鈕 -->
+      <button class="checkout-btn" onclick="goToCheckout()">我想購買</button>
+    </div>
+
+  </main>
+
+  <!-- 詳情介紹區塊 -->
+  <section class="details-section" id="details">
+    <h2 class="section-title">— 作品典藏與細節 —</h2>
+    <div class="details-content">
+      <p><strong>【釋迦牟尼佛】</strong> 佛教創始人，尊稱為本師釋迦牟尼佛。法相結觸地印（降魔印），右手指地、左手托缽，象徵悟道成佛、具足圓滿智慧與清淨寂靜之德。</p>
+      
+      <p><strong>【藝術微噴工藝】</strong> 本系列作品採用博物館級藝術微噴技術（Giclée Print），搭配純棉無酸藝術紙與高耐久顏料墨水，色彩還原度極高，能細膩呈現畫作筆觸與金屬色彩細節，長久保存不易退色。</p>
+    </div>
+  </section>
+
+  <!-- 購買須知區塊 -->
+  <section class="details-section" id="notice" style="margin-top: 0; padding-top: 30px;">
+    <h2 class="section-title">— 購買與寄送須知 —</h2>
+    <div class="details-content">
+      <p>1. <strong>發貨時間：</strong> 畫芯商品下單後約 3-5 個工作天內出貨。</p>
+      <p>2. <strong>包裝方式：</strong> 畫芯作品將以加厚防壓紙管捲裝寄送，確保運送過程無折痕。</p>
+      <p>3. <strong>色差說明：</strong> 螢幕顯示器因設定不同可能略有色差，實際色彩以實品藝術微噴畫作主。</p>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="../index.html">首頁</a> | 
+      <a href="collections.html">作品分類</a> | 
+      <a href="about.html">品牌故事</a> | 
+      <a href="reviews.html">顧客實景</a> | 
+      <a href="contact.html">聯絡我們</a>
+    </nav>
+    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // 跳轉結帳頁面
+    function goToCheckout() {
+      // ⚠️ 如果釋迦牟尼佛有獨立的賣貨便/綠界網址，請替換這行：
+      const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
+      
+      alert(`已為您選擇：【釋迦牟尼佛唐卡 - 典藏畫芯】\n即將為您導向安全的結帳頁面！`);
+      window.location.href = myPaymentUrl;
+    }
+  </script>
+
+</body>
+</html>
