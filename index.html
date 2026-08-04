@@ -249,6 +249,7 @@
       font-size: 22px;
       transition: color 0.3s ease, transform 0.2s ease;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .social-links a:hover {
@@ -390,8 +391,8 @@
       <div class="social-links">
         <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <!-- 直接開啟 Gmail 網頁版寫信頁面 -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rose03120909@gmail.com" target="_blank" title="Email Us (Gmail)"><i class="fa-regular fa-envelope"></i></a>
+        <!-- 點擊一鍵複製 Email 地址 -->
+        <a onclick="copyEmail()" title="複製 Email 地址"><i class="fa-regular fa-envelope"></i></a>
       </div>
 
       <!-- 頁尾選單 -->
@@ -410,6 +411,18 @@
 
     </div>
   </footer>
+
+  <script>
+    // 複製 Email 到剪貼簿功能
+    function copyEmail() {
+      const email = "rose03120909@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("已成功複製聯絡 Email：\n" + email);
+      }).catch(err => {
+        alert("聯絡 Email：\n" + email);
+      });
+    }
+  </script>
 
 </body>
 </html>
