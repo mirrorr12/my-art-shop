@@ -229,6 +229,7 @@
       font-size: 22px;
       transition: color 0.3s ease, transform 0.2s ease;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .social-links a:hover {
@@ -255,6 +256,28 @@
       color: #fff;
     }
 
+    /* 聯絡資訊區塊 */
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 13px;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-contact a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
     .footer-info {
       font-size: 12px;
       color: #666;
@@ -266,6 +289,10 @@
       .product-container {
         grid-template-columns: 1fr;
         gap: 30px;
+      }
+      .footer-contact {
+        flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
@@ -313,7 +340,7 @@
       </div>
 
       <!-- 購買按鈕 -->
-      <button class="checkout-btn" onclick="goToCheckout()">我想購買</button>
+      <button class="checkout-btn" onclick="goToCheckout()">前往綠界賣場選購</button>
     </div>
 
   </main>
@@ -338,7 +365,7 @@
     </div>
   </section>
 
-  <!-- 頁尾 Footer (包含 FB 與 IG 社群連結) -->
+  <!-- 頁尾 Footer -->
   <footer>
     <div class="footer-container">
       
@@ -346,6 +373,7 @@
       <div class="social-links">
         <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a onclick="copyEmail()" title="複製 Email 地址"><i class="fa-regular fa-envelope"></i></a>
       </div>
 
       <!-- 頁尾選單 -->
@@ -355,6 +383,12 @@
         <a href="gallery-artworks.html">原作賞析</a>
         <a href="about-artist.html">畫家介紹</a>
       </nav>
+
+      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <div class="footer-contact">
+        <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0981231641">0981-231-641</a></span>
+      </div>
 
       <!-- 版權文字 -->
       <div class="footer-info">
@@ -366,12 +400,22 @@
   </footer>
 
   <script>
-    // 跳轉結帳頁面
+    // 跳轉綠界賣場結帳頁面（已修改為綠界）
     function goToCheckout() {
-      const myPaymentUrl = "https://myship.7-11.com.tw/general/detail/GM2608033942142"; 
+      const myPaymentUrl = "https://alphaart.cashier.ecpay.com.tw"; 
       
-      alert(`已為您選擇：【釋迦牟尼佛唐卡 - 典藏畫芯】\n即將為您導向安全的結帳頁面！`);
-      window.location.href = myPaymentUrl;
+      alert(`已為您選擇：【釋迦牟尼佛唐卡 - 典藏畫芯】\n即將為您導向綠界安全賣場進行選購與結帳！`);
+      window.open(myPaymentUrl, "_blank");
+    }
+
+    // 複製 Email 到剪貼簿功能
+    function copyEmail() {
+      const email = "rose03120909@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("已成功複製聯絡 Email：\n" + email);
+      }).catch(err => {
+        alert("聯絡 Email：\n" + email);
+      });
     }
   </script>
 
