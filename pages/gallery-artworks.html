@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>α ART GALLERY | 唐卡原作線上美展賞析</title>
+  
+  <!-- 社群 Icon 圖示庫 (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
     * { 
       box-sizing: border-box; 
@@ -48,8 +52,8 @@
       transition: color 0.2s;
     }
 
-    nav a:hover, nav a.active {
-      color: #fff;
+    nav a:hover, nav a.active { 
+      color: #fff; 
     }
 
     /* 頁面標頭 */
@@ -113,14 +117,14 @@
       max-width: 100%; 
       max-height: 100%; 
       object-fit: contain; 
-      border-radius: 2px;
+      border-radius: 2px; 
     }
 
     .art-info { 
       padding: 35px; 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
     }
 
     .art-info h2 { 
@@ -129,43 +133,122 @@
       letter-spacing: 2px; 
       margin-bottom: 12px; 
       color: #fff; 
-      border-bottom: 1px solid #333;
-      padding-bottom: 12px;
+      border-bottom: 1px solid #333; 
+      padding-bottom: 12px; 
     }
 
     .art-info .subtitle {
-      font-size: 13px;
+      font-size: 13px; 
       color: #c5a059; /* 典藏金 */
-      letter-spacing: 1px;
-      margin-bottom: 15px;
+      letter-spacing: 1px; 
+      margin-bottom: 15px; 
     }
 
     .art-info .desc { 
       font-size: 14px; 
       color: #bbb; 
-      line-height: 1.8;
+      line-height: 1.8; 
       font-weight: 300; 
     }
 
+    /* 頁尾 Footer 樣式 */
     footer { 
       background: #0d0d0d; 
       border-top: 1px solid #222; 
-      padding: 40px 8%; 
-      text-align: center; 
-      font-size: 13px; 
-      color: #666; 
+      padding: 60px 20px 40px; 
       margin-top: 80px; 
     }
 
+    .footer-container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #888;
+      font-size: 22px;
+      transition: color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-nav a {
+      color: #777;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: #fff;
+    }
+
+    /* 聯絡資訊區塊 */
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 13px;
+      color: #888;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-contact a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-info {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.8;
+      letter-spacing: 1px;
+    }
+
     @media (max-width: 768px) {
-      .art-card {
-        grid-template-columns: 1fr;
+      .art-card { 
+        grid-template-columns: 1fr; 
       }
-      .art-img {
-        height: 320px;
+      .art-img { 
+        height: 320px; 
       }
-      .art-info {
-        padding: 25px;
+      .art-info { 
+        padding: 25px; 
+      }
+      .footer-contact {
+        flex-direction: column;
+        gap: 8px;
       }
     }
   </style>
@@ -177,7 +260,7 @@
     <a href="../index.html" class="logo">α ART GALLERY</a>
     <nav>
       <a href="../index.html">首頁</a>
-      <a href="shop-prints.html">藝術商店</a>
+      <a href="shop-prints.html">典藏商店</a>
       <a href="gallery-artworks.html" class="active">原作賞析</a>
       <a href="about-artist.html">畫家介紹</a>
     </nav>
@@ -238,7 +321,7 @@
     <article class="art-card">
       <div class="art-img">
         <img src="../images/Buddha.jpg" alt="釋迦牟尼佛原作">
-        </div>
+      </div>
       <div class="art-info">
         <h2>釋迦牟尼佛</h2>
         <div class="subtitle">本師圓滿法相 ‧ 寂靜智慧</div>
@@ -250,9 +333,51 @@
 
   </main>
 
+  <!-- 頁尾 Footer -->
   <footer>
-    <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+    <div class="footer-container">
+      
+      <!-- 社群連結 Icon 列 -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a onclick="copyEmail()" title="複製 Email 地址"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+
+      <!-- 頁尾選單 -->
+      <nav class="footer-nav">
+        <a href="../index.html">首頁</a>
+        <a href="shop-prints.html">典藏商店</a>
+        <a href="gallery-artworks.html">原作賞析</a>
+        <a href="about-artist.html">畫家介紹</a>
+      </nav>
+
+      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <div class="footer-contact">
+        <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0981231641">0981-231-641</a></span>
+      </div>
+
+      <!-- 版權文字 -->
+      <div class="footer-info">
+        <p>Taiwan ‧ Kaohsiung</p>
+        <p>© 2026 α ART GALLERY. All Rights Reserved.</p>
+      </div>
+
+    </div>
   </footer>
+
+  <script>
+    // 複製 Email 到剪貼簿功能
+    function copyEmail() {
+      const email = "rose03120909@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        alert("已成功複製聯絡 Email：\n" + email);
+      }).catch(err => {
+        alert("聯絡 Email：\n" + email);
+      });
+    }
+  </script>
 
 </body>
 </html>
