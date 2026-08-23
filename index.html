@@ -276,6 +276,28 @@
       color: #fff;
     }
 
+    /* 聯絡資訊區塊 */
+    .footer-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 13px;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-contact a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
     .footer-info {
       font-size: 12px;
       color: #666;
@@ -286,6 +308,7 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 28px; }
       .category-grid, .product-grid { grid-template-columns: 1fr; }
+      .footer-contact { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
@@ -391,7 +414,6 @@
       <div class="social-links">
         <a href="https://www.instagram.com/afatseng8?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/tseng.yalan?locale=zh_TW" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <!-- 點擊一鍵複製 Email 地址 -->
         <a onclick="copyEmail()" title="複製 Email 地址"><i class="fa-regular fa-envelope"></i></a>
       </div>
 
@@ -402,6 +424,12 @@
         <a href="pages/gallery-artworks.html">原作賞析</a>
         <a href="pages/about-artist.html">畫家介紹</a>
       </nav>
+
+      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <div class="footer-contact">
+        <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0912345678">0981-231-641</a></span>
+      </div>
 
       <!-- 版權文字 -->
       <div class="footer-info">
