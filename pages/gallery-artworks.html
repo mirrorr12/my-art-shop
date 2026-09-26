@@ -13,7 +13,7 @@
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; 
     }
     
     /* 深色藝廊氛圍 */
@@ -54,6 +54,7 @@
 
     nav a:hover, nav a.active { 
       color: #fff; 
+      font-weight: 600;
     }
 
     /* 頁面標頭 */
@@ -80,7 +81,7 @@
 
     /* 作品賞析容器 */
     .art-container { 
-      max-width: 1000px; 
+      max-width: 1050px; 
       margin: 50px auto; 
       padding: 0 20px; 
       display: flex;
@@ -95,17 +96,18 @@
       border-radius: 8px; 
       overflow: hidden; 
       display: grid;
-      grid-template-columns: 1.2fr 1fr; 
-      transition: border-color 0.3s ease; 
+      grid-template-columns: 1.15fr 1fr; 
+      transition: all 0.3s ease; 
     }
 
     .art-card:hover { 
       border-color: #444; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .art-img { 
       width: 100%; 
-      height: 420px; 
+      height: 480px; 
       background: #0d0d0d; 
       padding: 25px; 
       display: flex; 
@@ -117,11 +119,11 @@
       max-width: 100%; 
       max-height: 100%; 
       object-fit: contain; 
-      border-radius: 2px; 
+      border-radius: 3px; 
     }
 
     .art-info { 
-      padding: 35px; 
+      padding: 35px 35px 35px 25px; 
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
@@ -129,26 +131,70 @@
 
     .art-info h2 { 
       font-size: 24px; 
-      font-weight: 400; 
+      font-weight: 500; 
       letter-spacing: 2px; 
-      margin-bottom: 12px; 
+      margin-bottom: 8px; 
       color: #fff; 
-      border-bottom: 1px solid #333; 
-      padding-bottom: 12px; 
     }
 
     .art-info .subtitle {
       font-size: 13px; 
       color: #c5a059; /* 典藏金 */
       letter-spacing: 1px; 
-      margin-bottom: 15px; 
+      margin-bottom: 16px; 
+    }
+
+    /* 原作屬性小清單 */
+    .art-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 13px;
+      color: #888;
+      border-top: 1px solid #2c2c2c;
+      border-bottom: 1px solid #2c2c2c;
+      padding: 12px 0;
+      margin-bottom: 18px;
+    }
+
+    .art-meta-item {
+      display: flex;
+    }
+
+    .art-meta-item span:first-child {
+      width: 70px;
+      color: #666;
+    }
+
+    .art-meta-item span:last-child {
+      color: #bbb;
     }
 
     .art-info .desc { 
       font-size: 14px; 
       color: #bbb; 
-      line-height: 1.8; 
+      line-height: 1.85; 
       font-weight: 300; 
+      margin-bottom: 22px;
+    }
+
+    /* 查看詳細介紹 / 微噴選購按鈕 */
+    .art-action-btn {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 8px 18px;
+      border: 1px solid #c5a059;
+      color: #c5a059;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .art-action-btn:hover {
+      background: #c5a059;
+      color: #121212;
     }
 
     /* 頁尾 Footer 樣式 */
@@ -159,97 +205,97 @@
       margin-top: 80px; 
     }
 
-    .footer-container {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .footer-container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
       gap: 25px; 
     }
 
-    .social-links {
-      display: flex;
-      gap: 25px;
+    .social-links { 
+      display: flex; 
+      gap: 25px; 
       justify-content: center; 
     }
 
-    .social-links a {
-      color: #888;
-      font-size: 22px;
+    .social-links a { 
+      color: #888; 
+      font-size: 22px; 
       transition: color 0.3s ease, transform 0.2s ease; 
       text-decoration: none; 
       cursor: pointer; 
     }
 
-    .social-links a:hover {
-      color: #fff;
+    .social-links a:hover { 
+      color: #fff; 
       transform: translateY(-3px); 
     }
 
-    .footer-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .footer-nav { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
       gap: 20px; 
     }
 
-    .footer-nav a {
-      color: #777;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 1px;
+    .footer-nav a { 
+      color: #777; 
+      text-decoration: none; 
+      font-size: 13px; 
+      letter-spacing: 1px; 
       transition: color 0.2s; 
     }
 
-    .footer-nav a:hover {
+    .footer-nav a:hover { 
       color: #fff; 
     }
 
     /* 聯絡資訊區塊 */
-    .footer-contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      font-size: 13px;
-      color: #888;
+    .footer-contact { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 20px; 
+      font-size: 13px; 
+      color: #888; 
       letter-spacing: 0.5px; 
     }
 
-    .footer-contact a {
-      color: #aaa;
-      text-decoration: none;
+    .footer-contact a { 
+      color: #aaa; 
+      text-decoration: none; 
       transition: color 0.2s; 
     }
 
-    .footer-contact a:hover {
-      color: #fff;
+    .footer-contact a:hover { 
+      color: #fff; 
       text-decoration: underline; 
     }
 
-    .footer-info {
-      font-size: 12px;
-      color: #555;
-      line-height: 1.8;
+    .footer-info { 
+      font-size: 12px; 
+      color: #555; 
+      line-height: 1.8; 
       letter-spacing: 1px; 
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) { 
       .art-card { 
         grid-template-columns: 1fr; 
-      }
+      } 
       .art-img { 
-        height: 320px; 
-      }
+        height: 360px; 
+      } 
       .art-info { 
         padding: 25px; 
-      }
-      .footer-contact {
-        flex-direction: column;
+      } 
+      .footer-contact { 
+        flex-direction: column; 
         gap: 8px; 
-      }
+      } 
     }
   </style>
 </head>
@@ -266,10 +312,10 @@
     </nav>
   </header>
 
-  <!-- 標題說明 -->
+  <!-- 頁面標頭 -->
   <section class="page-header">
     <h1>唐卡藝術 ‧ 原作賞析</h1>
-    <p>傳承藏密繪畫筆意 ‧ 靜心品味線條與礦物顏料的色彩流轉</p>
+    <p>傳承藏密度量與筆意 ‧ 靜心品味天然礦物顏料與純金流轉的永恆之美</p>
   </section>
 
   <!-- 4 幅作品線上展覽 -->
@@ -282,24 +328,40 @@
       </div>
       <div class="art-info">
         <h2>四臂觀音</h2>
-        <div class="subtitle">慈悲與圓滿之化身</div>
+        <div class="subtitle">慈悲與圓滿之化身 ‧ 勉唐畫派風格</div>
+        
+        <div class="art-meta">
+          <div class="art-meta-item"><span>畫 師</span><span>曾雅蘭</span></div>
+          <div class="art-meta-item"><span>規 格</span><span>46 × 37 cm</span></div>
+          <div class="art-meta-item"><span>材 質</span><span>棉布、水干、純金</span></div>
+        </div>
+
         <p class="desc">
-          四臂代表「慈、悲、喜、捨」四無量心。畫像線條細緻流暢，菩薩尊容寂靜慈祥，雙手合十於胸前開敷蓮花，後兩手各持念珠與蓮花，展現極致的平靜與救度力量。
+          雪域守護本尊，以用色活潑鮮亮、法度嚴謹的勉唐畫派表現端莊圓潤之美。畫師特別以六字大明咒巧構「六雲、六龍、六蓮」三層次神聖空間，象徵六度波羅蜜多之圓滿成就與四無量心。
         </p>
+        <a href="product-four-armed-guanyin.html" class="art-action-btn">賞析作品細節與微噴典藏 →</a>
       </div>
     </article>
 
-    <!-- 2. 三面二十六臂準提佛母 -->
+    <!-- 2. 三面廿六臂準提佛母 -->
     <article class="art-card">
       <div class="art-img">
-        <img src="../images/26Guanyin.jpg" alt="三面二十六臂準提佛母原作">
+        <img src="../images/26Guanyin.jpg" alt="三面廿六臂準提佛母原作">
       </div>
       <div class="art-info">
-        <h2>三面二十六臂準提佛母</h2>
-        <div class="subtitle">廣大應化 ‧ 宏大威德法相</div>
+        <h2>三面廿六臂準提佛母</h2>
+        <div class="subtitle">廣大威德法相 ‧ 舉世罕見造像</div>
+        
+        <div class="art-meta">
+          <div class="art-meta-item"><span>畫 師</span><span>曾雅蘭</span></div>
+          <div class="art-meta-item"><span>規 格</span><span>72.7 × 61.2 cm</span></div>
+          <div class="art-meta-item"><span>材 質</span><span>棉布、水干、純金</span></div>
+        </div>
+
         <p class="desc">
-          準提佛母具備無上威德與廣大悲願。三面象徵斷除三毒、具足法報化三身，二十六臂各持殊勝法器與密印，構圖極其嚴謹繁複，展現隨類應化、救度一切眾生苦難之廣大宏願。
+          依據《寶源百法之準提佛母成就略軌》嚴謹造像。勉唐畫派工整線條與「五彩意境」講究空間景深；三面斷除三毒、廿六臂各持殊勝法器密印，頂安住五方佛，下承兩大龍王（造像考證《龍藏經》），具備不可思議威德力量。
         </p>
+        <a href="product-cundi.html" class="art-action-btn">賞析作品細節與微噴典藏 →</a>
       </div>
     </article>
 
@@ -310,10 +372,18 @@
       </div>
       <div class="art-info">
         <h2>密勒日巴尊者</h2>
-        <div class="subtitle">雪山瑜伽士 ‧ 清淨智慧</div>
+        <div class="subtitle">雪域瑜伽宗師 ‧ 噶瑪嘎孜畫派空靈美學</div>
+        
+        <div class="art-meta">
+          <div class="art-meta-item"><span>畫 師</span><span>曾雅蘭</span></div>
+          <div class="art-meta-item"><span>規 格</span><span>44 × 35.5 cm</span></div>
+          <div class="art-meta-item"><span>材 質</span><span>棉布、水干、純金</span></div>
+        </div>
+
         <p class="desc">
-          藏傳佛教噶舉派一代宗師。尊者右手聽歌、身著白衣，畫風帶有濃厚的雪山自然質感與岩石筆意，象徵對佛法真諦的清淨洞察與無上修行。
+          融匯漢地青綠山水與留白淡雅之筆墨，勾勒尊者於深山雪嶺苦修之超凡意境。畫師獨樹一格打破側耳聽歌造像，改以「禪修坐姿」與凝定專注神情，演繹尊者依大手印與拙火定證得即身成佛之究竟境界。
         </p>
+        <a href="product-milarepa.html" class="art-action-btn">賞析作品細節與微噴典藏 →</a>
       </div>
     </article>
 
@@ -324,10 +394,18 @@
       </div>
       <div class="art-info">
         <h2>釋迦牟尼佛</h2>
-        <div class="subtitle">本師圓滿法相 ‧ 寂靜智慧</div>
+        <div class="subtitle">本師圓滿法相 ‧ 降魔觸地印</div>
+        
+        <div class="art-meta">
+          <div class="art-meta-item"><span>畫 師</span><span>曾雅蘭</span></div>
+          <div class="art-meta-item"><span>規 格</span><span>原作典藏</span></div>
+          <div class="art-meta-item"><span>材 質</span><span>棉布、天然礦物顏料、純金</span></div>
+        </div>
+
         <p class="desc">
-          法相結經典「降魔觸地印」，右手指地、左手托缽，象徵悟道成佛。背景雲彩與金飾細節還原傳統度量衡之美，體現極致的莊嚴與清淨。
+          佛陀尊相結經典降魔觸地印，右手指地宣示大悟成佛、左手托缽清淨寂靜。整幅唐卡線條流暢嚴整，金泥開光細緻，完美展現傳統度量衡比例與極致慈悲莊嚴。
         </p>
+        <a href="product-buddha.html" class="art-action-btn">賞析作品細節與微噴典藏 →</a>
       </div>
     </article>
 
@@ -352,7 +430,7 @@
         <a href="about-artist.html">畫家介紹</a>
       </nav>
 
-      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <!-- 聯絡資訊 -->
       <div class="footer-contact">
         <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
         <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0981231641">0981-231-641</a></span>
