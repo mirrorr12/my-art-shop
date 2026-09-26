@@ -13,7 +13,7 @@
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; 
     }
     body { 
       background-color: #fafafa; 
@@ -47,7 +47,7 @@
       text-decoration: none; 
       color: #555; 
       font-size: 14px; 
-      transition: color 0.2s;
+      transition: color 0.2s; 
     }
 
     nav a:hover, nav a.active { 
@@ -114,12 +114,13 @@
       background: #fff; 
       border: 1px solid #eee; 
       border-radius: 6px; 
-      overflow: hidden;
+      overflow: hidden; 
       text-decoration: none; 
       color: inherit; 
       transition: all 0.3s ease; 
       align-items: center; 
       padding: 15px;
+      cursor: pointer;
     }
 
     .product-list-item:hover { 
@@ -193,11 +194,25 @@
       padding: 8px 18px; 
       font-size: 13px; 
       border-radius: 4px; 
+      text-decoration: none;
+      transition: background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background: #333;
     }
 
     /* 預告商品樣式 */
     .coming-soon { 
       opacity: 0.7; 
+      cursor: default;
+    }
+
+    .coming-soon:hover {
+      transform: none;
+      box-shadow: none;
+      border-color: #eee;
     }
 
     /* 頁尾 Footer 樣式 */
@@ -258,13 +273,13 @@
     }
 
     /* 聯絡資訊區塊 */
-    .footer-contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      font-size: 13px;
-      color: #aaa;
+    .footer-contact { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 20px; 
+      font-size: 13px; 
+      color: #aaa; 
       letter-spacing: 0.5px; 
     }
 
@@ -286,26 +301,26 @@
       letter-spacing: 1px; 
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 650px) { 
       .product-list-item { 
         flex-direction: column; 
         text-align: center; 
-      }
+      } 
       .list-img { 
         width: 100%; 
         height: 200px; 
-      }
+      } 
       .list-info { 
         padding: 15px 0; 
-      }
+      } 
       .list-price-action { 
         text-align: center; 
         padding-left: 0; 
-      }
+      } 
       .footer-contact { 
         flex-direction: column; 
         gap: 8px; 
-      }
+      } 
     }
   </style>
 </head>
@@ -336,7 +351,7 @@
   <main class="shop-container">
 
     <!-- 1. 四臂觀音 -->
-    <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="product-list-item">
+    <div class="product-list-item" onclick="location.href='product-fourarmedguanyin.html'">
       <div class="list-img"><img src="../images/FourArmedGuanyin.jpg" alt="四臂觀音"></div>
       <div class="list-info">
         <h3>四臂觀音唐卡 (高精細微噴)</h3>
@@ -345,26 +360,26 @@
       </div>
       <div class="list-price-action">
         <div class="price">NT$ 8,800 起</div>
-        <span class="buy-btn">立即選購 →</span>
+        <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="buy-btn" onclick="event.stopPropagation();">立即選購 →</a>
       </div>
-    </a>
+    </div>
 
-    <!-- 2. 三面二十六臂準提佛母 -->
-    <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="product-list-item">
-      <div class="list-img"><img src="../images/26Guanyin.jpg" alt="三面二十六臂準提佛母"></div>
+    <!-- 2. 三面廿六臂準提佛母 -->
+    <div class="product-list-item" onclick="location.href='product-26guanyin.html'">
+      <div class="list-img"><img src="../images/26Guanyin.jpg" alt="三面廿六臂準提佛母"></div>
       <div class="list-info">
-        <h3>三面二十六臂準提佛母唐卡 (高精細微噴)</h3>
+        <h3>三面廿六臂準提佛母唐卡 (高精細微噴)</h3>
         <p>宏大威德法相，細節層次豐富，適合空間供養。</p>
         <span class="tag">典藏微噴</span>
       </div>
       <div class="list-price-action">
         <div class="price">NT$ 8,800 起</div>
-        <span class="buy-btn">立即選購 →</span>
+        <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="buy-btn" onclick="event.stopPropagation();">立即選購 →</a>
       </div>
-    </a>
+    </div>
 
     <!-- 3. 密勒日巴尊者 -->
-    <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="product-list-item">
+    <div class="product-list-item" onclick="location.href='product-milarepa.html'">
       <div class="list-img"><img src="../images/Milarepa.jpg" alt="密勒日巴尊者"></div>
       <div class="list-info">
         <h3>密勒日巴尊者唐卡 (高精細微噴)</h3>
@@ -373,12 +388,12 @@
       </div>
       <div class="list-price-action">
         <div class="price">NT$ 8,800 起</div>
-        <span class="buy-btn">立即選購 →</span>
+        <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="buy-btn" onclick="event.stopPropagation();">立即選購 →</a>
       </div>
-    </a>
+    </div>
 
     <!-- 4. 釋迦牟尼佛 -->
-    <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="product-list-item">
+    <div class="product-list-item" onclick="location.href='product-buddha.html'">
       <div class="list-img"><img src="../images/Buddha.jpg" alt="釋迦牟尼佛"></div>
       <div class="list-info">
         <h3>釋迦牟尼佛唐卡 (高精細微噴)</h3>
@@ -387,9 +402,9 @@
       </div>
       <div class="list-price-action">
         <div class="price">NT$ 8,800</div>
-        <span class="buy-btn">立即選購 →</span>
+        <a href="https://alphaart.cashier.ecpay.com.tw" target="_blank" class="buy-btn" onclick="event.stopPropagation();">立即選購 →</a>
       </div>
-    </a>
+    </div>
 
     <!-- 5. 未來商品：藝術月曆（預告卡片） -->
     <div class="product-list-item coming-soon">
@@ -401,7 +416,7 @@
       </div>
       <div class="list-price-action">
         <div class="price" style="font-size:15px; color:#888;">籌備中</div>
-        <span class="buy-btn" style="background:#888; cursor:default;">敬請期待</span>
+        <span class="buy-btn" style="background:#888; cursor:default;" onclick="event.stopPropagation();">敬請期待</span>
       </div>
     </div>
 
