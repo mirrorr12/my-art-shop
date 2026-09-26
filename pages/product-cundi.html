@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>α ART GALLERY | 三面二十六臂準提佛母唐卡高精細微噴</title>
+  <title>α ART GALLERY | 三面廿六臂準提佛母唐卡高精細微噴</title>
   
   <!-- 社群 Icon 圖示庫 (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,7 +13,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif;
     }
 
     body {
@@ -121,14 +121,23 @@
       flex-direction: column;
     }
 
+    .product-artist {
+      font-size: 14px;
+      color: #777;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
     .product-title {
-      font-size: 28px;
-      font-weight: 500;
+      font-size: 26px;
+      font-weight: 600;
       margin-bottom: 12px;
+      color: #1a1a1a;
+      line-height: 1.3;
     }
 
     .price-bar {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       display: flex;
       align-items: baseline;
       gap: 12px;
@@ -146,9 +155,10 @@
       font-size: 12px;
       border-radius: 3px;
       color: #555;
+      letter-spacing: 0.5px;
     }
 
-    /* 選項區塊 */
+    /* 規格選單 */
     .option-title {
       font-size: 14px;
       color: #555;
@@ -183,6 +193,37 @@
       border-color: #1a1a1a;
     }
 
+    /* 規格動態說明框 */
+    .option-description-box {
+      font-size: 13px;
+      color: #555;
+      background: #f7f7f7;
+      border: 1px solid #ececec;
+      padding: 14px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* 原作資訊摘要表格 */
+    .meta-list {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .meta-item {
+      display: flex;
+      margin-bottom: 6px;
+    }
+
+    .meta-label {
+      width: 80px;
+      color: #999;
+    }
+
     /* 購買按鈕 */
     .checkout-btn {
       width: 100%;
@@ -196,7 +237,6 @@
       letter-spacing: 2px;
       border-radius: 4px;
       transition: background-color 0.2s;
-      margin-top: 10px;
     }
 
     .checkout-btn:hover {
@@ -206,7 +246,7 @@
     /* 下方詳情介紹區塊 */
     .details-section {
       max-width: 900px;
-      margin: 80px auto 40px;
+      margin: 60px auto 40px;
       padding: 0 20px;
       border-top: 1px solid #eee;
       padding-top: 50px;
@@ -216,24 +256,52 @@
       font-size: 22px;
       font-weight: 500;
       text-align: center;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
+      margin-bottom: 35px;
+      letter-spacing: 1.5px;
     }
 
     .details-content {
       font-size: 15px;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 40px;
+      color: #333;
+      line-height: 1.9;
     }
 
     .details-content p {
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+    }
+
+    .spec-table-container {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .spec-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .spec-table .td-label {
+      width: 110px;
+      color: #777;
+      font-weight: 500;
     }
 
     .detail-img-box {
       text-align: center;
-      margin: 30px 0;
+      margin: 35px 0;
     }
 
     .detail-img-box img {
@@ -298,7 +366,6 @@
       color: #fff;
     }
 
-    /* 聯絡資訊區塊 */
     .footer-contact {
       display: flex;
       flex-wrap: wrap;
@@ -360,33 +427,44 @@
     <!-- 左側圖片區 -->
     <div class="gallery-container">
       <div class="main-image-box">
-        <img id="mainImage" src="../images/26Guanyin.jpg" alt="三面二十六臂準提佛母主圖">
+        <img id="mainImage" src="../images/26Guanyin.jpg" alt="三面廿六臂準提佛母主圖">
       </div>
       <div class="thumb-list">
-        <img class="thumb-item active" src="../images/26Guanyin.jpg" onclick="changeImage(this)">
-        <img class="thumb-item" src="../images/26Guanyinframed.jpg" onclick="changeImage(this)">
+        <img class="thumb-item active" src="../images/26Guanyin.jpg" alt="畫芯預覽" onclick="changeImage(this)">
+        <img class="thumb-item" src="../images/26Guanyinframed.jpg" alt="布裱預覽" onclick="changeImage(this)">
       </div>
     </div>
 
     <!-- 右側選購控制區 -->
     <div class="product-info">
-      <h1 class="product-title">三面二十六臂準提佛母唐卡(高精細微噴)</h1>
+      <div class="product-artist">畫師：曾雅蘭</div>
+      <h1 class="product-title">三面廿六臂準提佛母<br><span style="font-size:18px; font-weight:400; color:#666;">故宮典藏級高精細絹布藝術微噴</span></h1>
       
       <div class="price-bar">
         <span class="current-price" id="totalPriceDisplay">NT$ 8,800 TWD</span>
-        <span class="sale-tag">典藏微噴</span>
+        <span class="sale-tag">限量典藏微噴</span>
       </div>
 
       <!-- 規格選單 -->
       <div class="option-title">規格：<strong id="selectedFrameName" style="color:#000;">畫芯</strong></div>
       <div class="frame-options">
-        <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 8800, '【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。')">畫芯</button>
-        <button class="frame-btn" onclick="onFrameSelect(this, '傳統藏式裝裱', 38000, '【傳統藏式裝裱】採用傳統絹織布藝手藝裝裱，具備藏式掛軸質感，可直接掛於佛堂或空間。')">傳統藏式裝裱</button>
+        <button class="frame-btn selected" onclick="onFrameSelect(this, '畫芯', 8800, '<strong>【畫芯】</strong><br>‧ 故宮數位典藏等級掃描、絹布藝術微噴<br>‧ 尺寸：74.8 × 63 cm<br>‧ 適合自行尋找框藝或捲軸客製裝裱。')">畫芯</button>
+        <button class="frame-btn" onclick="onFrameSelect(this, '布裱', 38000, '<strong>【布裱】</strong><br>‧ 故宮數位典藏等級掃描、絹布藝術微噴<br>‧ 藏式唐卡精緻織緞布裱、金軸<br>‧ 尺寸：依藏式裝裱規格訂製<br>‧ 傳統唐卡掛軸工藝，適合直接懸掛於佛堂、禪室或清雅空間。')">布裱</button>
       </div>
 
       <!-- 規格動態介紹區 -->
-      <div id="optionDescription" style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
-        【畫芯】僅提供高精細藝術微噴畫芯，適合自行尋找框藝或捲軸裝裱。
+      <div class="option-description-box" id="optionDescription">
+        <strong>【畫芯】</strong><br>
+        ‧ 故宮數位典藏等級掃描、絹布藝術微噴<br>
+        ‧ 尺寸：74.8 × 63 cm<br>
+        ‧ 適合自行尋找框藝或捲軸客製裝裱。
+      </div>
+
+      <!-- 原作規格摘要 -->
+      <div class="meta-list">
+        <div class="meta-item"><span class="meta-label">原作尺寸</span><span>72.7 × 61.2 cm</span></div>
+        <div class="meta-item"><span class="meta-label">原作材質</span><span>棉布、水干、純金</span></div>
+        <div class="meta-item"><span class="meta-label">造像依規</span><span>《寶源百法之準提佛母成就略軌》</span></div>
       </div>
 
       <!-- 購買按鈕 -->
@@ -397,14 +475,47 @@
 
   <!-- 詳情介紹區塊 -->
   <section class="details-section" id="details">
-    <h2 class="section-title">— 作品典藏與細節 —</h2>
+    <h2 class="section-title">— 作品典藏與工藝 —</h2>
+    
     <div class="details-content">
-      <p><strong>【三面二十六臂準提佛母】</strong> 準提佛母為顯密共尊之殊勝大菩薩，具備無上威德與廣大悲願。三面象徵斷除三毒、具足法報化三身；二十六臂各持殊勝法器與密印，展現隨類應化、消災免難、滿一切世出世間善願之廣大威神力。</p>
+      <div class="spec-table-container">
+        <table class="spec-table">
+          <tr>
+            <td class="td-label">作品名稱</td>
+            <td>三面廿六臂準提佛母</td>
+          </tr>
+          <tr>
+            <td class="td-label">畫師</td>
+            <td>曾雅蘭</td>
+          </tr>
+          <tr>
+            <td class="td-label">原作規格</td>
+            <td>尺寸 72.7 × 61.2 cm ｜ 材質：棉布、水干、純金</td>
+          </tr>
+          <tr>
+            <td class="td-label">微噴規格 (畫芯)</td>
+            <td>故宮數位典藏等級掃描、絹布藝術微噴 ｜ 尺寸：74.8 × 63 cm</td>
+          </tr>
+          <tr>
+            <td class="td-label">微噴規格 (布裱)</td>
+            <td>故宮數位典藏等級掃描、絹布藝術微噴 ｜ 藏式唐卡精緻織緞布裱、金軸</td>
+          </tr>
+        </table>
+      </div>
+
+      <p><strong>【作品簡介與傳承法相】</strong><br>
+      三面廿六臂準提佛母唐卡舉世罕見，畫師打稿佛母依據<strong>《寶源百法之準提佛母成就略軌》</strong>法本造像。畫風採<strong>勉唐畫派</strong>風格，線條細膩流暢、工整嚴謹，講究「五彩意境」、山水景深與空間感，畫面充滿神靈動感與莊嚴力量。</p>
       
-      <p><strong>【藝術微噴工藝】</strong> 本系列作品採用博物館級藝術微噴技術（Giclée Print），搭配純棉無酸藝術紙與高耐久顏料墨水，色彩還原度極高，能細膩呈現畫作筆觸與金屬色彩細節，長久保存不易退色。</p>
+      <p><strong>【準提佛母殊勝法相】</strong><br>
+      佛母身白如秋月色，三面、面各三目：正面白善相微笑，右面青色忿怒相、利牙如初月舌如閃電，左面黃色咬唇。<br>
+      具足二十六臂，雙手於胸前結根本印。其餘諸臂所持法器或手印：諸右臂持施護印、劍與念珠、如意果、箭與鉞斧、寶棒、鐵鎚與鐵鈎、金剛杵、風幡及念珠；諸左臂則持寶幢、蓮花與淨瓶、羂索、弓與爍吉帝、法輪、劍與期克印、寶瓶、繩矛、般若經函。佛母雙足跏趺坐，綾羅及珍寶飾品為莊嚴。</p>
+
+      <p><strong>【頂嚴與護法龍王】</strong><br>
+      佛母頂嚴安住<strong>五方佛</strong>：中央白大日如來、東方青藍阿閦佛、西方紅阿彌陀佛、南方黃寶生佛、北方綠不空成就佛。<br>
+      兩側為<strong>難陀龍王</strong>、<strong>跋難陀龍王</strong>（意譯歡喜龍王、賢喜龍王）——經典記載兩大龍王為準提佛母共扶蓮華莖，善調風雨。龍王造像特參考<strong>《龍藏經》</strong>之神采筆法，極具典藏與瞻禮價值。</p>
 
       <div class="detail-img-box">
-        <img src="../images/26Guanyinframed.jpg" alt="裝裱展示">
+        <img src="../images/26Guanyinframed.jpg" alt="三面廿六臂準提佛母裝裱展示">
       </div>
     </div>
   </section>
@@ -413,8 +524,8 @@
   <section class="details-section" id="notice" style="margin-top: 0; padding-top: 30px;">
     <h2 class="section-title">— 購買與寄送須知 —</h2>
     <div class="details-content">
-      <p>1. <strong>發貨時間：</strong> 博物館級微噴、純手工精緻傳統藏式裝裱，出貨時間較長，約需 2-3 週，敬請耐心等候。</p>
-      <p>2. <strong>色差說明：</strong> 螢幕顯示器因設定不同可能略有色差，實際色彩以實品藝術微噴畫作主。</p>
+      <p>1. <strong>發貨時間：</strong> 故宮典藏級掃描微噴與手工藏式織緞布裱製作嚴謹，出貨時間約需 2-3 週，敬請耐心等候。</p>
+      <p>2. <strong>色彩說明：</strong> 各螢幕顯示器顯色微有差異，作品以實品高精細絹布微噴之細緻光澤與色彩為準。</p>
     </div>
   </section>
 
@@ -437,7 +548,7 @@
         <a href="about-artist.html">畫家介紹</a>
       </nav>
 
-      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <!-- 聯絡資訊 -->
       <div class="footer-contact">
         <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
         <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0981231641">0981-231-641</a></span>
@@ -462,13 +573,13 @@
       document.getElementById('mainImage').src = element.src;
     }
 
-    // 2. 規格切換
-    function onFrameSelect(buttonElement, frameName, price, description) {
+    // 2. 規格切換 (支援 HTML 換行渲染)
+    function onFrameSelect(buttonElement, frameName, price, htmlDescription) {
       document.querySelectorAll('.frame-btn').forEach(btn => btn.classList.remove('selected'));
       buttonElement.classList.add('selected');
       
       document.getElementById('selectedFrameName').innerText = frameName;
-      document.getElementById('optionDescription').innerText = description;
+      document.getElementById('optionDescription').innerHTML = htmlDescription;
       
       basePrice = price;
       document.getElementById('totalPriceDisplay').innerText = `NT$ ${basePrice.toLocaleString()} TWD`;
