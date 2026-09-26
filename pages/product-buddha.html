@@ -13,7 +13,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif;
     }
 
     body {
@@ -100,13 +100,15 @@
     }
 
     .product-title {
-      font-size: 28px;
-      font-weight: 500;
+      font-size: 26px;
+      font-weight: 600;
       margin-bottom: 12px;
+      color: #1a1a1a;
+      line-height: 1.3;
     }
 
     .price-bar {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       display: flex;
       align-items: baseline;
       gap: 12px;
@@ -124,9 +126,10 @@
       font-size: 12px;
       border-radius: 3px;
       color: #555;
+      letter-spacing: 0.5px;
     }
 
-    /* 選項區塊 */
+    /* 規格選單 */
     .option-title {
       font-size: 14px;
       color: #555;
@@ -143,12 +146,24 @@
     .frame-btn {
       padding: 12px;
       border: 1px solid #1a1a1a;
-      background: #1a1a1a;
+      background-color: #1a1a1a;
       color: #fff;
       border-radius: 4px;
       font-size: 14px;
       text-align: center;
       cursor: default;
+    }
+
+    /* 規格動態說明框 */
+    .option-description-box {
+      font-size: 13px;
+      color: #555;
+      background: #f7f7f7;
+      border: 1px solid #ececec;
+      padding: 14px;
+      border-radius: 4px;
+      margin-bottom: 25px;
+      line-height: 1.6;
     }
 
     /* 購買按鈕 */
@@ -164,7 +179,6 @@
       letter-spacing: 2px;
       border-radius: 4px;
       transition: background-color 0.2s;
-      margin-top: 10px;
     }
 
     .checkout-btn:hover {
@@ -174,7 +188,7 @@
     /* 下方詳情介紹區塊 */
     .details-section {
       max-width: 900px;
-      margin: 80px auto 40px;
+      margin: 60px auto 40px;
       padding: 0 20px;
       border-top: 1px solid #eee;
       padding-top: 50px;
@@ -184,19 +198,18 @@
       font-size: 22px;
       font-weight: 500;
       text-align: center;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
+      margin-bottom: 35px;
+      letter-spacing: 1.5px;
     }
 
     .details-content {
       font-size: 15px;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 40px;
+      color: #333;
+      line-height: 1.9;
     }
 
     .details-content p {
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
 
     /* 頁尾 Footer 樣式 */
@@ -290,6 +303,9 @@
         grid-template-columns: 1fr;
         gap: 30px;
       }
+      .frame-options {
+        grid-template-columns: 1fr;
+      }
       .footer-contact {
         flex-direction: column;
         gap: 8px;
@@ -321,22 +337,23 @@
 
     <!-- 右側選購控制區 -->
     <div class="product-info">
-      <h1 class="product-title">釋迦牟尼佛唐卡(高精細微噴)</h1>
+      <h1 class="product-title">釋迦牟尼佛唐卡<br><span style="font-size:18px; font-weight:400; color:#666;">故宮典藏級高精細藝術微噴</span></h1>
       
       <div class="price-bar">
         <span class="current-price">NT$ 8,800 TWD</span>
-        <span class="sale-tag">典藏微噴</span>
+        <span class="sale-tag">限量典藏微噴</span>
       </div>
 
       <!-- 規格選單 (僅畫芯) -->
-      <div class="option-title">規格：<strong>典藏畫芯 (無裝裱)</strong></div>
+      <div class="option-title">規格：<strong style="color:#000;">典藏畫芯 (無裝裱)</strong></div>
       <div class="frame-options">
         <div class="frame-btn">典藏畫芯</div>
       </div>
 
       <!-- 規格簡介區 -->
-      <div style="font-size: 13px; color: #666; background: #f5f5f5; padding: 12px; border-radius: 4px; margin-bottom: 25px; line-height: 1.5;">
-        【典藏畫芯】本作品僅提供高精細藝術微噴畫芯，不含布藝裝裱或外框，方便您依個人喜好自行至框藝店進行裝裱設計。
+      <div class="option-description-box">
+        <strong>【典藏畫芯】</strong><br>
+        本作品僅提供高精細藝術微噴畫芯，不含布藝裝裱或外框，方便您依個人喜好自行至框藝店進行裝裱設計。
       </div>
 
       <!-- 購買按鈕 -->
@@ -359,7 +376,7 @@
   <section class="details-section" id="notice" style="margin-top: 0; padding-top: 30px;">
     <h2 class="section-title">— 購買與寄送須知 —</h2>
     <div class="details-content">
-      <p>1. <strong>發貨時間：</strong> 博物館級微噴、純手工精緻傳統藏式裝裱，出貨時間較長，約需 2-3 週，敬請耐心等候。</p>
+      <p>1. <strong>發貨時間：</strong> 故宮典藏級掃描微噴製作嚴謹，出貨時間約需 2-3 週，敬請耐心等候。</p>
       <p>2. <strong>色差說明：</strong> 螢幕顯示器因設定不同可能略有色差，實際色彩以實品藝術微噴畫作主。</p>
     </div>
   </section>
@@ -399,7 +416,7 @@
   </footer>
 
   <script>
-    // 跳轉綠界賣場結帳頁面（已修改為綠界）
+    // 跳轉綠界賣場結帳頁面
     function goToCheckout() {
       const myPaymentUrl = "https://alphaart.cashier.ecpay.com.tw"; 
       
