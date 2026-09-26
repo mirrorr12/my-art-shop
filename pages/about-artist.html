@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>α ART GALLERY | 藝術家 曾雅蘭 介紹</title>
+  <title>α ART GALLERY | 唐卡畫師 曾雅蘭 藝術專題與創作紀實</title>
   
   <!-- 社群 Icon 圖示庫 (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -13,12 +13,12 @@
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", sans-serif; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang TC", "Noto Sans TC", sans-serif; 
     }
     body { 
       background-color: #fafafa; 
       color: #222; 
-      line-height: 1.8; 
+      line-height: 1.85; 
     }
 
     /* 頂部導覽列 */
@@ -47,7 +47,7 @@
       text-decoration: none; 
       color: #555; 
       font-size: 14px; 
-      transition: color 0.2s;
+      transition: color 0.2s; 
     }
 
     nav a:hover, nav a.active { 
@@ -55,9 +55,9 @@
       font-weight: 600; 
     }
 
-    /* 主內容區塊 */
+    /* 主內容容器 */
     .artist-container { 
-      max-width: 960px; 
+      max-width: 980px; 
       margin: 50px auto; 
       padding: 0 20px; 
     }
@@ -69,9 +69,10 @@
 
     .artist-profile h1 { 
       font-size: 32px; 
-      font-weight: 400; 
+      font-weight: 500; 
       letter-spacing: 4px; 
       margin-bottom: 10px; 
+      color: #1a1a1a;
     }
 
     .artist-profile p { 
@@ -83,22 +84,23 @@
     /* 左右雙欄英雄區塊 (Hero Split Layout) */
     .artist-hero-grid { 
       display: grid; 
-      grid-template-columns: 420px 1fr; 
-      gap: 35px; 
+      grid-template-columns: 400px 1fr; 
+      gap: 40px; 
       align-items: center; 
       background: #fff; 
-      padding: 30px; 
+      padding: 35px; 
       border: 1px solid #eee; 
       border-radius: 12px; 
-      margin-bottom: 30px; 
+      margin-bottom: 35px; 
       box-shadow: 0 4px 16px rgba(0,0,0,0.03); 
     }
 
     .hero-drawing-box { 
       width: 100%; 
-      height: 380px; 
+      height: 440px; 
       overflow: hidden; 
       border-radius: 8px; 
+      background: #f5f5f5;
     }
 
     .hero-drawing-box img { 
@@ -110,8 +112,8 @@
     }
 
     .hero-intro h2 { 
-      font-size: 22px; 
-      font-weight: 500; 
+      font-size: 23px; 
+      font-weight: 600; 
       margin-bottom: 15px; 
       padding-bottom: 10px; 
       border-bottom: 1px solid #eee; 
@@ -122,38 +124,153 @@
     .hero-intro p { 
       color: #444; 
       font-size: 15px; 
-      line-height: 1.8; 
+      line-height: 1.85; 
       text-align: justify; 
+      margin-bottom: 14px;
     }
 
     /* 通用文章卡片 */
     .artist-content { 
       background: #fff; 
-      padding: 35px 40px; 
+      padding: 40px 45px; 
       border: 1px solid #eee; 
       border-radius: 12px; 
-      margin-bottom: 30px; 
+      margin-bottom: 35px; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.02); 
     }
 
+    .section-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      color: #8c734b;
+      background: #fbf8f2;
+      border: 1px solid #eadfcb;
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
     .artist-content h2 { 
-      font-size: 20px; 
-      font-weight: 500; 
-      margin-bottom: 15px; 
+      font-size: 22px; 
+      font-weight: 600; 
+      margin-bottom: 18px; 
       padding-bottom: 10px; 
       border-bottom: 1px solid #eee; 
       letter-spacing: 1px; 
       color: #1a1a1a; 
     }
 
+    .artist-content h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #222;
+      margin: 28px 0 12px;
+    }
+
     .artist-content p { 
       color: #444; 
       font-size: 15px; 
-      margin-bottom: 15px; 
+      margin-bottom: 16px; 
+      text-align: justify;
     }
 
-    .artist-content p:last-child { 
-      margin-bottom: 0; 
+    /* 過程圖展示網格 (Process Photo Grid) */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0 28px;
+    }
+
+    .process-item {
+      background: #fdfdfd;
+      border: 1px solid #ececec;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .process-item:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .process-img-box {
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #f2f2f2;
+    }
+
+    .process-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .process-item:hover .process-img-box img {
+      transform: scale(1.04);
+    }
+
+    .process-caption {
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #666;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      line-height: 1.5;
+    }
+
+    .process-caption strong {
+      color: #8c734b;
+      display: block;
+      margin-bottom: 2px;
+      font-size: 13px;
+    }
+
+    /* 條列與列表樣式 */
+    .custom-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 15px 0 20px;
+    }
+
+    .custom-list li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .custom-list li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: #8c734b;
+      font-weight: bold;
+    }
+
+    /* 畫師心境引言卡片 */
+    .quote-box {
+      background: #fcfbf9;
+      border-left: 4px solid #8c734b;
+      padding: 22px 28px;
+      border-radius: 0 8px 8px 0;
+      margin: 25px 0;
+      color: #333;
+    }
+
+    .quote-box p {
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 0;
+      color: #3f3931;
     }
 
     /* 京都寫真圖集 (相簿網格) */
@@ -212,7 +329,7 @@
       font-size: 22px; 
       transition: color 0.3s ease, transform 0.2s ease; 
       text-decoration: none; 
-      cursor: pointer;
+      cursor: pointer; 
     }
 
     .social-links a:hover { 
@@ -240,25 +357,25 @@
     }
 
     /* 聯絡資訊區塊 */
-    .footer-contact {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      font-size: 13px;
-      color: #aaa;
-      letter-spacing: 0.5px;
+    .footer-contact { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 20px; 
+      font-size: 13px; 
+      color: #aaa; 
+      letter-spacing: 0.5px; 
     }
 
-    .footer-contact a {
-      color: #ddd;
-      text-decoration: none;
-      transition: color 0.2s;
+    .footer-contact a { 
+      color: #ddd; 
+      text-decoration: none; 
+      transition: color 0.2s; 
     }
 
-    .footer-contact a:hover {
-      color: #fff;
-      text-decoration: underline;
+    .footer-contact a:hover { 
+      color: #fff; 
+      text-decoration: underline; 
     }
 
     .footer-info { 
@@ -273,21 +390,30 @@
       .artist-hero-grid { 
         grid-template-columns: 1fr; 
         padding: 20px; 
-        gap: 20px; 
-      }
+        gap: 25px; 
+      } 
       .hero-drawing-box { 
-        height: 280px; 
+        height: 300px; 
+      } 
+      .artist-content {
+        padding: 25px 20px;
+      }
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-img-box {
+        height: 260px;
       }
       .photo-grid { 
         grid-template-columns: 1fr; 
-      }
+      } 
       .photo-item { 
         height: 320px; 
-      }
-      .footer-contact {
-        flex-direction: column;
-        gap: 8px;
-      }
+      } 
+      .footer-contact { 
+        flex-direction: column; 
+        gap: 8px; 
+      } 
     }
   </style>
 </head>
@@ -305,36 +431,136 @@
   </header>
 
   <main class="artist-container">
+    
+    <!-- 頂部畫師標題 -->
     <div class="artist-profile">
       <h1>唐卡畫師 ‧ 曾雅蘭</h1>
-      <p>傳承藏密繪畫筆意 ‧ 靜心筆觸與宗教藝術之美</p>
+      <p>構圖式佛法 ‧ 筆尖上的靜心修行與當代唐卡美學</p>
     </div>
 
-    <!-- 左圖右文：主形象照與簡介 -->
+    <!-- 左圖右文：畫師形象與自述 -->
     <div class="artist-hero-grid">
       <div class="hero-drawing-box">
         <img src="../images/drawing.jpg" alt="曾雅蘭老師繪製唐卡過程">
       </div>
       <div class="hero-intro">
         <h2>關於曾雅蘭 (Artist Profile)</h2>
-        <p>唐卡畫師曾雅蘭，專注於藏傳佛教唐卡繪畫藝術。修習唐卡藝術多年，承襲傳統藏密唐卡之嚴謹度量衡與繪製工藝。</p>
-        <br>
-        <p>每一幅唐卡作品均經歷研磨天然礦物顏料、勾勒流暢線條與層層鋪塗，將對佛法的敬仰與靜心能量融入筆觸之中。</p>
+        <p>曾雅蘭，當代專注於藏傳佛教唐卡藝術的創作畫師。修習唐卡藝術多年，在唐卡老師<strong>貝瑪堪卓</strong>的指導引領下，深研勉唐、噶瑪嘎孜等傳統經典畫派的法度與筆意。</p>
+        <p>對曾雅蘭而言，唐卡不僅是一門莊嚴的宗教藝術，更被她視為<strong>「構圖式佛法」</strong>——每一筆繪製，皆是一場考驗耐力、定力與自省心志的精進修持。</p>
+        <p>她始終奉行<strong>「自己創稿，畫出獨一無二唐卡」</strong>的創作信條，既嚴守經軌規範之度量衡，又能在山水景深、雲紋與象徵佈局中融入畫師獨到的藝術巧思，將無盡虔敬與沉靜能量注入每一方畫布。</p>
       </div>
     </div>
 
-    <!-- 繪製工藝 -->
-    <div class="artist-content">
-      <h2>繪製工藝與創作理念 (Craftsmanship)</h2>
-      <p><strong>1. 天然礦物顏料：</strong> 使用金箔、綠松石、孔雀石、朱砂等天然礦物顏料入畫，色彩經久不退，呈現莊嚴之金屬光澤與色彩層次。</p>
-      <p><strong>2. 嚴謹度量衡規範：</strong> 嚴格遵循傳統唐卡度量衡規範，從菩薩尊容、手印至法器比例皆經過精確計算，展現圓滿莊嚴之慈悲法相。</p>
-      <p><strong>3. 典藏級微噴藝術：</strong> 為了讓更多喜愛唐卡藝術的藏家能典藏作品，我們採用博物館級高精細微噴技術，忠實呈現原作線條與豐富細節。</p>
-    </div>
+    <!-- 核心專題：畫師創作紀實 -->
+    <article class="artist-content">
+      <span class="section-badge">ARTISTIC PRACTICE & RETREAT</span>
+      <h2>【筆尖上的修行】曾雅蘭的唐卡創作心歷與工藝美學</h2>
+      
+      <p>在當代快速奔流的節奏中，曾雅蘭選擇了一條需要極大耐心與定力的古典修持之路。唐卡的誕生，是一連串近乎苦修般繁複工序的累積，從基礎的畫布製作到最後的開眼開光，無不體現畫師對藝術純粹性的極致追求。</p>
+
+      <h3>一、 手作畫布與嚴謹度量：「替」的幾何法度</h3>
+      <p>一幅具備生命力的唐卡，始於最質樸的手作溫度。畫師必須親自將棉布車邊，並以棉線穿引、均勻張緊於特製木框之上。隨後歷經上膠、陰乾、拋光打磨的「不斷重複」，直至布面的每根纖維孔洞皆被細密填平，形成如溫潤羊皮紙般平滑的繪畫肌理。</p>
+      <p>在構圖下筆時，畫師不使用公分或現代尺規，而是恪遵傳承千年的度量基準——以名為<strong>「替」</strong>的幾何比例為依歸。從頂髻、面容、雙耳至身軀肩肘，皆有著兩倍、四倍、六倍的精準比例對應，確保佛相的圓融莊嚴。</p>
+
+      <!-- 前期階段圖 (1, 2, 3) -->
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/1.jpg" alt="1. 幾何度量與基準打線">
+          </div>
+          <div class="process-caption">
+            <strong>01. 嚴謹度量打線</strong>
+            畫師依「替」之法度精確度量，奠定莊嚴如法的造像根基。
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/2.jpg" alt="2. 紙稿獨創構圖">
+          </div>
+          <div class="process-caption">
+            <strong>02. 原創紙稿起稿</strong>
+            秉持自創心稿之理念，在經典規範中淬鍊出專屬的神聖景深。
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/3.jpg" alt="3. 平滑布面精確落筆">
+          </div>
+          <div class="process-caption">
+            <strong>03. 布面精緻落墨</strong>
+            於反覆打磨的手作畫布上，以極細筆尖屏息勾勒靈動線條。
+          </div>
+        </div>
+      </div>
+
+      <h3>二、 傳統典範中的原創巧思：法境的當代昇華</h3>
+      <p>曾雅蘭認為，唐卡中的本尊坐姿與法印雖受經典嚴格規範，但在周圍的雲水山川、自然花草與眷屬佈局上，正是畫師體悟佛理、發揮藝術創造力的廣闊天地。</p>
+      <p>在歷時數月的創作中，她往往對構圖進行多次深化昇華——例如在經典四臂觀音的創稿中，她將傳統構圖調整為<strong>「六龍御天」</strong>的磅礡佈局，與水中綻放的<strong>六朵清淨蓮花</strong>遙相呼應，巧妙將大乘佛教<strong>「六度波羅蜜」</strong>（布施、持戒、忍辱、精進、禪定、智慧）的行願融會於畫境中；同時嚴謹考證「五妙欲」（色、聲、香、味、觸）的供養象徵，使整幅畫作宛如一部視覺化的經典。</p>
+
+      <h3>三、 天然礦物研磨與繁複繪製：用時間凝練光華</h3>
+      <p>為了使作品能經歷數百年歲月依然光彩璀璨，曾雅蘭堅持選用硃砂、綠松石、孔雀石、水干顏料等天然礦物與動物膠調和。在正式落筆前，畫師需耐心地在乳缽中親手研磨原石顆粒，每一個顏色往往需耗時三至四個小時的靜心研磨，方能淬鍊出細膩如雲霧般的純淨發色。</p>
+      <p>在著色技法上，先後順序絲毫不可紊亂：天空與大地講究「先平塗底色、再細緻點染」，大地透過無數極微細筆觸堆疊出厚實肌理，江河水紋則憑藉「層層暈染」展現出水光的粼粼流動。</p>
+
+      <!-- 中後期階段圖 (4, 5, 6) -->
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/4.jpg" alt="4. 點染深邃湛藍天空">
+          </div>
+          <div class="process-caption">
+            <strong>04. 兩週點染湛藍天空</strong>
+            萬千細點層層鋪疊，老老實實於呼吸呼吸之間化現純淨漸層。
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/5.jpg" alt="5. 張緊木框、景致著色">
+          </div>
+          <div class="process-caption">
+            <strong>05. 木框張緊與精工著色</strong>
+            先平塗再暈染，細膩勾勒水流波浪與厚實大地質感。
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-img-box">
+            <img src="../images/6.jpg" alt="6. 釋迦牟尼佛成道日圓滿">
+          </div>
+          <div class="process-caption">
+            <strong>06. 攝心寂靜成就圓滿</strong>
+            無數個日夜精雕細琢，終在佛成道日宣告功德圓滿。
+          </div>
+        </div>
+      </div>
+
+      <h3>四、 兩週點染與「色空不二」的深刻體悟</h3>
+      <p>傳統唐卡的漸層立體感，全靠畫師手持細筆，沾取極淡的礦彩「一點、一點」慢慢堆疊而來。現代繪圖軟體只需數秒即可拉出平滑漸層，但在曾雅蘭的案頭前，光是一整片湛藍深邃的天空，她就老老實實點了整整兩個星期。</p>
+      
+      <div class="quote-box">
+        <p><strong>畫師的靜心札記：</strong><br>
+        「畫唐卡時必須隨時攝心，氣息要調整到如游絲般細微而穩定，在每一個微小的色點中，都能清清楚楚看見自己當下的心念波瀾。<br><br>
+        記得有一整天專注於點染，歇筆休息時，我驚訝地發現身體裡依然持續共振著那份細密的點染波頻，彷彿全身細胞都在輕鳴。那份久久不散的平靜與法喜，讓我領悟到唐卡點染本身就是一種如持咒般的密行，更在筆尖與長久的寂靜中，親身證會了『色空不二』的佛法意境。」</p>
+      </div>
+
+      <p>每一幅凝聚無盡虔敬、融合天然礦物斑斕色彩與藝術巧思的作品，往往經歷跨越數季的打磨，並在殊勝吉祥的吉日終告圓滿。</p>
+    </article>
+
+    <!-- 畫師的藝術理念與風格範疇 -->
+    <article class="artist-content">
+      <span class="section-badge">ARTISTIC PHILOSOPHY</span>
+      <h2>繪畫風格與傳承理念 (Philosophy & Style)</h2>
+      
+      <p>曾雅蘭的繪畫視野涵蓋藏傳佛教各大主要風格，並融入自身對人文與自然的觀察：</p>
+      <ul class="custom-list">
+        <li><strong>勉唐畫派的工整嚴謹：</strong> 線條圓潤流暢、五彩意境深邃，善於表現本尊莊嚴慈悲之相（如《三面廿六臂準提佛母》、《四臂觀音》）。</li>
+        <li><strong>噶瑪嘎孜畫派的空靈飄逸：</strong> 巧妙融入青綠山水與留白淡雅意境，營造孤高寂靜之超然氛圍（如《密勒日巴尊者》）。</li>
+        <li><strong>手印與密印的內在觀修：</strong> 畫師在下筆時常隨文入觀、一邊持誦相應心咒，使唐卡不僅具備高度的視覺美學，更成為承載清淨加持與祈願的心靈載體。</li>
+      </ul>
+    </article>
 
     <!-- 生活寫真與人文紀錄 -->
     <div class="artist-content">
       <h2>生活印象 ‧ 旅途與靜心 (Impressions)</h2>
-      <p>藝術源於對生命的體悟。在漫步與創作之間，汲取自然與萬物的靜謐靈感，將一份從容與定靜融入筆尖。</p>
+      <p>藝術源於對生命本質的深刻觀察。曾雅蘭在旅行、漫步與古典庭園的參訪中汲取自然靈感，將一份超然、溫柔與沉著的生命底色，全然映照於每一次的揮筆之中。</p>
       
       <div class="photo-grid">
         <div class="photo-item"><img src="../images/kyoto1.jpg" alt="曾雅蘭老師人文寫真 1"></div>
@@ -363,7 +589,7 @@
         <a href="about-artist.html">畫家介紹</a>
       </nav>
 
-      <!-- 綠界審核必備：聯絡電話與 Email 資訊 -->
+      <!-- 聯絡資訊 -->
       <div class="footer-contact">
         <span><i class="fa-regular fa-envelope"></i> 電子郵件：<a href="mailto:rose03120909@gmail.com">rose03120909@gmail.com</a></span>
         <span><i class="fa-solid fa-phone"></i> 聯絡電話：<a href="tel:0981231641">0981-231-641</a></span>
